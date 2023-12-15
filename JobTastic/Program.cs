@@ -3,6 +3,7 @@ using JobTastic.Services;
 using Microsoft.EntityFrameworkCore;
 using JobTastic.Data;
 using JobTastic.Areas.Identity.Data;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("AuthDbContextConnection") ?? throw new InvalidOperationException("Connection string 'sendMailContextConnection' not found.");
