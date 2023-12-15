@@ -10,15 +10,17 @@ using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading;
 using System.Threading.Tasks;
+using JobTastic.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
-using JobTastic.Areas.Identity.Data;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using JobTastic.Areas.Identity.Data;
+using JobTastic.Models;
+using JobTastic.Services;
 
 namespace JobTastic.Areas.Identity.Pages.Account
 {
@@ -29,14 +31,14 @@ namespace JobTastic.Areas.Identity.Pages.Account
         private readonly IUserStore<ApplicationUser> _userStore;
         private readonly IUserEmailStore<ApplicationUser> _emailStore;
         private readonly ILogger<RegisterModel> _logger;
-        private readonly IEmailSender _emailSender;
+        private readonly IMailService _emailSender;
 
         public RegisterModel(
             UserManager<ApplicationUser> userManager,
             IUserStore<ApplicationUser> userStore,
             SignInManager<ApplicationUser> signInManager,
             ILogger<RegisterModel> logger,
-            IEmailSender emailSender)
+            IMailService emailSender)
         {
             _userManager = userManager;
             _userStore = userStore;
@@ -71,9 +73,13 @@ namespace JobTastic.Areas.Identity.Pages.Account
         /// </summary>
         public class InputModel
         {
+            /// <summary>
+            ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
+            ///     directly from your code. This API may change or be removed in future releases.
+            /// </summary>
             [Required]
             [DataType(DataType.Text)]
-            [Display(Name ="First Name")]
+            [Display(Name = "First Name")]
             public string FirstName { get; set; }
 
             [Required]
@@ -81,10 +87,6 @@ namespace JobTastic.Areas.Identity.Pages.Account
             [Display(Name = "Last Name")]
             public string LastName { get; set; }
 
-            /// <summary>
-            ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-            ///     directly from your code. This API may change or be removed in future releases.
-            /// </summary>
             [Required]
             [EmailAddress]
             [Display(Name = "Email")]
@@ -117,6 +119,7 @@ namespace JobTastic.Areas.Identity.Pages.Account
             {
                 Response.Redirect("/");
             }
+
             ReturnUrl = returnUrl;
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
         }
@@ -149,8 +152,13 @@ namespace JobTastic.Areas.Identity.Pages.Account
                         values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl },
                         protocol: Request.Scheme);
 
-                    await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
-                        $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+                    MailRequest mailRequest = new MailRequest(
+                        Input.Email,
+                        "Confirm your email",
+                        $"Please confirm your account by clicking here: <a href=\"{callbackUrl}\">Click here to confirm your account</a>"
+                    );
+
+                    await _emailSender.SendEmailAsync(mailRequest);
 
                     if (_userManager.Options.SignIn.RequireConfirmedAccount)
                     {
