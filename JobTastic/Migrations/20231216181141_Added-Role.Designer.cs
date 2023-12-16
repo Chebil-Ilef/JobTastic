@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JobTastic.Migrations
 {
     [DbContext(typeof(AuthDbContext))]
-    [Migration("20231216094625_addedRoles")]
-    partial class addedRoles
+    [Migration("20231216181141_Added-Role")]
+    partial class AddedRole
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
