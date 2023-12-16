@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ZeMveREd0H8h+G2Grn0eFBkqaLkSnGe6aZQJHYOsCKA=",
+  "Hash": "jOAYyWcz0iY4R5xwCWeDaZgqO9YM552Xo4RgXPGUei0=",
   "Source": "JobTastic",
   "BasePath": "_content/JobTastic",
   "Mode": "Default",
@@ -1069,6 +1069,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\msi\\OneDrive\\Bureau\\Projet Dotnet\\JobTastic\\JobTastic\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\JobTastic.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\msi\\OneDrive\\Bureau\\Projet Dotnet\\JobTastic\\JobTastic\\wwwroot\\css\\contact.css",
+      "SourceId": "JobTastic",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\msi\\OneDrive\\Bureau\\Projet Dotnet\\JobTastic\\JobTastic\\wwwroot\\",
+      "BasePath": "_content/JobTastic",
+      "RelativePath": "css/contact.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\contact.css"
     },
     {
       "Identity": "C:\\Users\\msi\\OneDrive\\Bureau\\Projet Dotnet\\JobTastic\\JobTastic\\wwwroot\\css\\site.css",

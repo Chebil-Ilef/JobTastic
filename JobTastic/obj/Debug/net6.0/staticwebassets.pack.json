@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\JobTastic.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\msi\\OneDrive\\Bureau\\Projet Dotnet\\JobTastic\\JobTastic\\wwwroot\\css\\contact.css",
+      "PackagePath": "staticwebassets\\css\\contact.css"
+    },
+    {
       "Id": "C:\\Users\\msi\\OneDrive\\Bureau\\Projet Dotnet\\JobTastic\\JobTastic\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
