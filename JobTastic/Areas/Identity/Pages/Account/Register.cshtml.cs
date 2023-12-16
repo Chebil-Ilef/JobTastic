@@ -10,15 +10,17 @@ using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading;
 using System.Threading.Tasks;
+using JobTastic.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
-using JobTastic.Areas.Identity.Data;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using JobTastic.Areas.Identity.Data;
+using JobTastic.Models;
+using JobTastic.Services;
 
 namespace JobTastic.Areas.Identity.Pages.Account
 {
@@ -29,14 +31,16 @@ namespace JobTastic.Areas.Identity.Pages.Account
         private readonly IUserStore<ApplicationUser> _userStore;
         private readonly IUserEmailStore<ApplicationUser> _emailStore;
         private readonly ILogger<RegisterModel> _logger;
-        private readonly IEmailSender _emailSender;
+        private readonly IMailService _emailSender;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
         public RegisterModel(
-            UserManager<ApplicationUser> userManager,
-            IUserStore<ApplicationUser> userStore,
-            SignInManager<ApplicationUser> signInManager,
-            ILogger<RegisterModel> logger,
-            IEmailSender emailSender)
+             UserManager<ApplicationUser> userManager,
+             IUserStore<ApplicationUser> userStore,
+             SignInManager<ApplicationUser> signInManager,
+             ILogger<RegisterModel> logger,
+             IMailService emailSender,
+             RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
             _userStore = userStore;
@@ -44,6 +48,7 @@ namespace JobTastic.Areas.Identity.Pages.Account
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
+            _roleManager = roleManager; 
         }
 
         /// <summary>
@@ -53,6 +58,7 @@ namespace JobTastic.Areas.Identity.Pages.Account
         [BindProperty]
         public InputModel Input { get; set; }
 
+   
         /// <summary>
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
         ///     directly from your code. This API may change or be removed in future releases.
@@ -71,9 +77,13 @@ namespace JobTastic.Areas.Identity.Pages.Account
         /// </summary>
         public class InputModel
         {
+            /// <summary>
+            ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
+            ///     directly from your code. This API may change or be removed in future releases.
+            /// </summary>
             [Required]
             [DataType(DataType.Text)]
-            [Display(Name ="First Name")]
+            [Display(Name = "First Name")]
             public string FirstName { get; set; }
 
             [Required]
@@ -81,10 +91,6 @@ namespace JobTastic.Areas.Identity.Pages.Account
             [Display(Name = "Last Name")]
             public string LastName { get; set; }
 
-            /// <summary>
-            ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-            ///     directly from your code. This API may change or be removed in future releases.
-            /// </summary>
             [Required]
             [EmailAddress]
             [Display(Name = "Email")]
@@ -108,6 +114,9 @@ namespace JobTastic.Areas.Identity.Pages.Account
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
+
+            [Required]
+            public string SelectedRole { get; set; }
         }
 
 
@@ -117,6 +126,7 @@ namespace JobTastic.Areas.Identity.Pages.Account
             {
                 Response.Redirect("/");
             }
+
             ReturnUrl = returnUrl;
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
         }
@@ -125,19 +135,31 @@ namespace JobTastic.Areas.Identity.Pages.Account
         {
             returnUrl ??= Url.Content("~/");
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
+
             if (ModelState.IsValid)
             {
                 var user = CreateUser();
 
                 user.FirstName = Input.FirstName;
                 user.LastName = Input.LastName;
+                user.SelectedRole = Input.SelectedRole;
 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
+
                 var result = await _userManager.CreateAsync(user, Input.Password);
 
                 if (result.Succeeded)
                 {
+                    // User created successfully, now add to role
+                    if (!string.IsNullOrEmpty(user.SelectedRole) && await _roleManager.RoleExistsAsync(user.SelectedRole))
+                    {
+                        await _userManager.AddToRoleAsync(user, user.SelectedRole);
+                    }
+
+                    // Save changes to the database
+                    await _userManager.UpdateAsync(user);
+
                     _logger.LogInformation("User created a new account with password.");
 
                     var userId = await _userManager.GetUserIdAsync(user);
@@ -149,8 +171,13 @@ namespace JobTastic.Areas.Identity.Pages.Account
                         values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl },
                         protocol: Request.Scheme);
 
-                    await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
-                        $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+                    MailRequest mailRequest = new MailRequest(
+                        Input.Email,
+                        "Confirm your email",
+                        $"Please confirm your account by clicking here: <a href=\"{callbackUrl}\">Click here to confirm your account</a>"
+                    );
+
+                    await _emailSender.SendEmailAsync(mailRequest);
 
                     if (_userManager.Options.SignIn.RequireConfirmedAccount)
                     {
@@ -162,6 +189,7 @@ namespace JobTastic.Areas.Identity.Pages.Account
                         return LocalRedirect(returnUrl);
                     }
                 }
+
                 foreach (var error in result.Errors)
                 {
                     ModelState.AddModelError(string.Empty, error.Description);
@@ -171,6 +199,7 @@ namespace JobTastic.Areas.Identity.Pages.Account
             // If we got this far, something failed, redisplay form
             return Page();
         }
+
 
         private ApplicationUser CreateUser()
         {
