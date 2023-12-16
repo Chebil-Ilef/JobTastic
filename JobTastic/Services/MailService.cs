@@ -31,5 +31,25 @@ namespace JobTastic.Services
             await smtp.SendAsync(email);
             smtp.Disconnect(true);
         }
+
+        public async Task SendContactAsync(ContactMail contactMail)
+        {
+            var email = new MimeMessage();
+            email.Sender = new MailboxAddress(contactMail.FromEmail,contactMail.FromEmail);
+            email.To.Add(MailboxAddress.Parse("ilefchebile@gmail.com"));
+            email.Subject = contactMail.Subject;
+       
+            var builder = new BodyBuilder();
+
+            builder.HtmlBody = contactMail.Body;
+            email.Body = builder.ToMessageBody();
+
+            using var smtp = new SmtpClient();
+            smtp.Connect(_mailSettings.Host, _mailSettings.Port, SecureSocketOptions.StartTls);
+            smtp.Authenticate(_mailSettings.Mail, _mailSettings.Password);
+            await smtp.SendAsync(email);
+            smtp.Disconnect(true);
+        }
+
     }
 }
