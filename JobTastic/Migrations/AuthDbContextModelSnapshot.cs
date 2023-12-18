@@ -110,7 +110,7 @@ namespace JobTastic.Migrations
 
                     b.HasKey("JobCategoryId");
 
-                    b.ToTable("JobCategories");
+                    b.ToTable("JobCategories", (string)null);
                 });
 
             modelBuilder.Entity("JobTastic.Models.JobOffer", b =>
@@ -155,7 +155,7 @@ namespace JobTastic.Migrations
 
                     b.HasIndex("authorId");
 
-                    b.ToTable("JobOffers");
+                    b.ToTable("JobOffers", (string)null);
                 });
 
             modelBuilder.Entity("JobTastic.Models.JobType", b =>
@@ -169,7 +169,7 @@ namespace JobTastic.Migrations
 
                     b.HasKey("JobTypeId");
 
-                    b.ToTable("JobTypes");
+                    b.ToTable("JobTypes", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

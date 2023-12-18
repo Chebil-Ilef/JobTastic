@@ -68,6 +68,74 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/olfam/OneDrive/Documents/GitHub/JobTastic/JobTastic/Views/JobCategory/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm9iQ2F0ZWdvcnlcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/olfam/OneDrive/Documents/GitHub/JobTastic/JobTastic/Views/JobCategory/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm9iQ2F0ZWdvcnlcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/olfam/OneDrive/Documents/GitHub/JobTastic/JobTastic/Views/JobCategory/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm9iQ2F0ZWdvcnlcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/olfam/OneDrive/Documents/GitHub/JobTastic/JobTastic/Views/JobCategory/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm9iQ2F0ZWdvcnlcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/olfam/OneDrive/Documents/GitHub/JobTastic/JobTastic/Views/JobCategory/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm9iQ2F0ZWdvcnlcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/olfam/OneDrive/Documents/GitHub/JobTastic/JobTastic/Views/JobOffer/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm9iT2ZmZXJcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/olfam/OneDrive/Documents/GitHub/JobTastic/JobTastic/Views/JobOffer/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm9iT2ZmZXJcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/olfam/OneDrive/Documents/GitHub/JobTastic/JobTastic/Views/JobOffer/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm9iT2ZmZXJcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/olfam/OneDrive/Documents/GitHub/JobTastic/JobTastic/Views/JobOffer/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm9iT2ZmZXJcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/olfam/OneDrive/Documents/GitHub/JobTastic/JobTastic/Views/JobOffer/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm9iT2ZmZXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/olfam/OneDrive/Documents/GitHub/JobTastic/JobTastic/Views/JobOffer/Popular.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm9iT2ZmZXJcUG9wdWxhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/olfam/OneDrive/Documents/GitHub/JobTastic/JobTastic/Views/JobOffer/_PopularPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm9iT2ZmZXJcX1BvcHVsYXJQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/olfam/OneDrive/Documents/GitHub/JobTastic/JobTastic/Views/JobType/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm9iVHlwZVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/olfam/OneDrive/Documents/GitHub/JobTastic/JobTastic/Views/JobType/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm9iVHlwZVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/olfam/OneDrive/Documents/GitHub/JobTastic/JobTastic/Views/JobType/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm9iVHlwZVxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/olfam/OneDrive/Documents/GitHub/JobTastic/JobTastic/Views/JobType/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm9iVHlwZVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/olfam/OneDrive/Documents/GitHub/JobTastic/JobTastic/Views/JobType/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm9iVHlwZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/olfam/OneDrive/Documents/GitHub/JobTastic/JobTastic/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

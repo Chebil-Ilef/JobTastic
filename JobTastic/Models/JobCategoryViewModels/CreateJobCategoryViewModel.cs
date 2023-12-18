@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using JobTastic.Helpers.CustomValidators;
 
-namespace JobTastic.Models.JobTypeViewModels
+namespace JobTastic.Models.JobCategoryViewModels
 {
     public class CreateJobCategoryViewModel
     {
