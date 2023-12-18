@@ -1,7 +1,7 @@
 ﻿using JobTastic.Areas.Identity.Data;
 using System.ComponentModel.DataAnnotations;
 
-namespace JobTastic.Models.JobTypeViewModels
+namespace JobTastic.Models.JobOfferViewModels
 {
     public class PopularJobOfferViewModel
     {

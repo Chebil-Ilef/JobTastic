@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using JobTastic.Helpers.CustomValidators;
 
-namespace JobTastic.Models.JobTypeViewModels
+namespace JobTastic.Models.JobOfferViewModels
 {
     public class CreateJobOfferViewModel
     {

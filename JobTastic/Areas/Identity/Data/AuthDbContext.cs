@@ -22,4 +22,5 @@ public class AuthDbContext : IdentityDbContext<ApplicationUser>
     public  DbSet<JobCategory> JobCategories { get; set; }
     public  DbSet<JobType> JobTypes { get; set; }
     public  DbSet<JobOffer> JobOffers { get; set; }
+    public  DbSet<ApplicationUser> ApplicationUsers { get; set; }
 }

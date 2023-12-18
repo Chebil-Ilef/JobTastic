@@ -1178,3 +1178,6 @@ C:\Users\olfam\OneDrive\Documents\GitHub\JobTastic\JobTastic\obj\Debug\net6.0\Jo
 C:\Users\olfam\OneDrive\Documents\GitHub\JobTastic\JobTastic\obj\Debug\net6.0\JobTastic.genruntimeconfig.cache
 C:\Users\olfam\OneDrive\Documents\GitHub\JobTastic\JobTastic\obj\Debug\net6.0\ref\JobTastic.dll
 C:\Users\olfam\OneDrive\Documents\GitHub\JobTastic\JobTastic\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\olfam\OneDrive\Documents\GitHub\JobTastic\JobTastic\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\olfam\OneDrive\Documents\GitHub\JobTastic\JobTastic\bin\Debug\net6.0\Autofac.dll
+C:\Users\olfam\OneDrive\Documents\GitHub\JobTastic\JobTastic\bin\Debug\net6.0\Autofac.Extensions.DependencyInjection.dll
