@@ -6,15 +6,27 @@
 
 <h3>@ViewData["Title"]</h3>
 <hr />
-<div>
-    <dl class="dl-horizontal">
-        <dt>
-            <label asp-for="@Model.Name"></label>
-        </dt>
-        <dd>
-            <p asp-display-for="@Model.Name"></p>
-        </dd>
-    </dl>
+<div class="container mt-4">
+    <h1 class="display-4">JobType Details</h1>
+
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">JobType Information</h4>
+            <hr />
+            <dl class="row">
+                <dt
+                    class="col-sm-2">JobCategory Name
+                </dt>
+                <dd
+                    class="col-sm-10">@Html.DisplayFor(model => model.Name)
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>
+<div class="container mt-4">
+    <div class="d-flex justify-content-between">
     <a asp-action="Edit" asp-route-id="@Model.JobCategoryId" class="btn btn-primary btn-sm">Edit</a>
     <a asp-action="Index" class="btn btn-default btn-sm">Back to list</a>
+    </div>
 </div>

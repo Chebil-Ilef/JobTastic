@@ -118,13 +118,13 @@ namespace JobTastic.Controllers
         {
             if (id == null)
             {
-                return View("NotFound");
+                return NotFound();
             }
 
             var category = await _jobCategoryService.GetCategoryById(id);
             if (category == null)
             {
-                return View("NotFound");
+                return NotFound();
             }
 
             var vm = _mapper.Map<DeleteJobCategoryViewModel>(category);
@@ -132,23 +132,19 @@ namespace JobTastic.Controllers
         }
 
         // POST: JobType/Delete/5
-        [HttpPost]
+        [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(DeleteJobCategoryViewModel model)
         {
-            if (!ModelState.IsValid)
+            if (model == null)
             {
-                return View(model);
+                return NotFound();
             }
 
             var category = _mapper.Map<JobCategory>(model);
-            var result = await _jobCategoryService.Delete(category);
-            if (result)
-            {
-                return RedirectToAction(nameof(Index));
-            }
+            await _jobCategoryService.Delete(category);
 
-            return View("NotFound");
+            return RedirectToAction(nameof(Index));    
 
         }
 

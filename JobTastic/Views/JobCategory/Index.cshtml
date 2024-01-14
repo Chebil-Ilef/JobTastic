@@ -23,7 +23,7 @@
         {
             <tr>
                 <td>
-                    <p asp-display-for="@item.Name"></p>
+                    @Html.DisplayFor(modelItem => item.Name)
                 </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.JobCategoryId" class="btn btn-primary btn-sm">Edit</a>
