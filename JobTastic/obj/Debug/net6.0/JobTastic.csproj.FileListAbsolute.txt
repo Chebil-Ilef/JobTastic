@@ -1181,3 +1181,6 @@ C:\Users\olfam\OneDrive\Documents\GitHub\JobTastic\JobTastic\bin\Debug\net6.0\Sy
 C:\Users\olfam\OneDrive\Documents\GitHub\JobTastic\JobTastic\bin\Debug\net6.0\AutoMapper.dll
 C:\Users\olfam\OneDrive\Documents\GitHub\JobTastic\JobTastic\bin\Debug\net6.0\Autofac.dll
 C:\Users\olfam\OneDrive\Documents\GitHub\JobTastic\JobTastic\bin\Debug\net6.0\Autofac.Extensions.DependencyInjection.dll
+C:\Users\Asma\Desktop\project\JobTastic\JobTastic\bin\Debug\net6.0\Autofac.dll
+C:\Users\Asma\Desktop\project\JobTastic\JobTastic\bin\Debug\net6.0\Autofac.Extensions.DependencyInjection.dll
+C:\Users\Asma\Desktop\project\JobTastic\JobTastic\bin\Debug\net6.0\AutoMapper.dll
