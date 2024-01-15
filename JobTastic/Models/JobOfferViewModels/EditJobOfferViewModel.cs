@@ -26,8 +26,8 @@ namespace JobTastic.Models.JobOfferViewModels
         [Display(Name = "Description")]
         public string Description { get; set; }
         
-        public IEnumerable<JobCategory> JobCategories { get; set; }
+        public IEnumerable<JobCategory>? JobCategories { get; set; }
 
-        public IEnumerable<JobType> JobTypes { get; set; }
+        public IEnumerable<JobType>? JobTypes { get; set; }
     }
 }
