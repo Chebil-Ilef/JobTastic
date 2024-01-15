@@ -6,7 +6,6 @@ namespace JobTastic.Models.JobOfferViewModels
 {
     public class CreateJobOfferViewModel
     {
-        public string JobOfferId { get; set; }
 
         [Required]
         public string AuthorId { get; set; }
@@ -29,8 +28,8 @@ namespace JobTastic.Models.JobOfferViewModels
         [Display(Name = "Description")]
         public string Description { get; set; }
 
-        public IEnumerable<JobCategory> JobCategories { get; set; }
+        public IEnumerable<JobCategory>? JobCategories { get; set; }
 
-        public IEnumerable<JobType> JobTypes { get; set; }
+        public IEnumerable<JobType>? JobTypes { get; set; }
     }
 }

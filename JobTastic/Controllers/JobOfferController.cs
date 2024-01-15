@@ -139,8 +139,9 @@ namespace JobTastic.Controllers
             {
                 AuthorId = user.Id,
                 JobCategories = await _jobCategoryService.GetAllCategories(),
-                JobTypes = await _jobTypeService.GetAllTypes()
-            };
+                JobTypes = await _jobTypeService.GetAllTypes(),
+
+        };
 
             return View(viewModel);
         }
@@ -158,6 +159,7 @@ namespace JobTastic.Controllers
             }
 
             var jobOffer = _mapper.Map<JobOffer>(model);
+            jobOffer.jobOfferId = GenerateRandomUniqueIdString();
             var result = await _jobOfferService.Add(jobOffer);
             if (result)
             {
@@ -219,13 +221,13 @@ namespace JobTastic.Controllers
         {
             if (id == null)
             {
-                return View("NotFound");
+                return NotFound();
             }
 
             var jobOffer = await _jobOfferService.GetOfferById(id);
             if (jobOffer == null)
             {
-                return View("NotFound");
+                return NotFound();
             }
 
             var viewModel = _mapper.Map<DeleteJobOfferViewModel>(jobOffer);
@@ -233,23 +235,24 @@ namespace JobTastic.Controllers
         }
 
         // POST: JobOffer/Delete/5
-        [HttpPost]
+        [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(DeleteJobOfferViewModel model)
         {
-            if (!ModelState.IsValid)
+            if (model == null)
             {
-                return View(model);
-            }
-            
-            var offer = _mapper.Map<JobOffer>(model);
-            var result = await _jobOfferService.Delete(offer);
-            if (result)
-            {
-                return RedirectToAction(nameof(Index));
+                return NotFound();
             }
 
-            return View("NotFound");
+            var offer = _mapper.Map<JobOffer>(model);
+            await _jobOfferService.Delete(offer);
+
+            return RedirectToAction(nameof(Index));
+           
+        }
+        public static string GenerateRandomUniqueIdString()
+        {
+            return Guid.NewGuid().ToString("N");
         }
     }
 }

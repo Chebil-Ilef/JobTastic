@@ -29,8 +29,10 @@ namespace JobTastic.Services
             IJobCategoryRepository jobCategoryRepo,
             IJobTypeRepository jobTypeRepo,
             AuthDbContext db,
-            IUnitOfWork unitOfWork)
+            IUnitOfWork unitOfWork,
+            IApplicationUserRepository applicationUserRepo)
         {
+            _applicationUserRepo = applicationUserRepo;
             _jobOfferRepo = jobOfferRepo;
             _jobCategoryRepo = jobCategoryRepo;
             _jobTypeRepo = jobTypeRepo;
