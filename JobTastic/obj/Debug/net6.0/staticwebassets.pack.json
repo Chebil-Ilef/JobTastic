@@ -1,451 +1,459 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\JobTastic.bundle.scp.css",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\JobTastic.bundle.scp.css",
       "PackagePath": "staticwebassets\\JobTastic.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\css\\contact.css",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\css\\contact.css",
       "PackagePath": "staticwebassets\\css\\contact.css"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\css\\site.css",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\css\\theme-rtl.css",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\css\\theme-rtl.css",
       "PackagePath": "staticwebassets\\css\\theme-rtl.css"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\css\\theme-rtl.css.map",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\css\\theme-rtl.css.map",
       "PackagePath": "staticwebassets\\css\\theme-rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\css\\theme-rtl.min.css",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\css\\theme-rtl.min.css",
       "PackagePath": "staticwebassets\\css\\theme-rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\css\\theme-rtl.min.css.map",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\css\\theme-rtl.min.css.map",
       "PackagePath": "staticwebassets\\css\\theme-rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\css\\theme.css",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\css\\theme.css",
       "PackagePath": "staticwebassets\\css\\theme.css"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\favicon.ico",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\.gitkeep",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\.gitkeep",
       "PackagePath": "staticwebassets\\img\\.gitkeep"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\favicons\\android-chrome-192x192.png",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\favicons\\android-chrome-192x192.png",
       "PackagePath": "staticwebassets\\img\\favicons\\android-chrome-192x192.png"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\favicons\\android-chrome-512x512.png",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\favicons\\android-chrome-512x512.png",
       "PackagePath": "staticwebassets\\img\\favicons\\android-chrome-512x512.png"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\favicons\\apple-touch-icon.png",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\favicons\\apple-touch-icon.png",
       "PackagePath": "staticwebassets\\img\\favicons\\apple-touch-icon.png"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\favicons\\browserconfig.xml",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\favicons\\browserconfig.xml",
       "PackagePath": "staticwebassets\\img\\favicons\\browserconfig.xml"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\favicons\\favicon-16x16.png",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\favicons\\favicon-16x16.png",
       "PackagePath": "staticwebassets\\img\\favicons\\favicon-16x16.png"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\favicons\\favicon-32x32.png",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\favicons\\favicon-32x32.png",
       "PackagePath": "staticwebassets\\img\\favicons\\favicon-32x32.png"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\favicons\\favicon.ico",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\favicons\\favicon.ico",
       "PackagePath": "staticwebassets\\img\\favicons\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\favicons\\manifest.json",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\favicons\\manifest.json",
       "PackagePath": "staticwebassets\\img\\favicons\\manifest.json"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\favicons\\mstile-150x150.png",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\favicons\\mstile-150x150.png",
       "PackagePath": "staticwebassets\\img\\favicons\\mstile-150x150.png"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\favicons\\site.webmanifest",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\favicons\\site.webmanifest",
       "PackagePath": "staticwebassets\\img\\favicons\\site.webmanifest"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\gallery\\MANIAC.jpg",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\gallery\\MANIAC.jpg",
       "PackagePath": "staticwebassets\\img\\gallery\\MANIAC.jpg"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\gallery\\Polygon 1 copy 3.png",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\gallery\\Polygon 1 copy 3.png",
       "PackagePath": "staticwebassets\\img\\gallery\\Polygon 1 copy 3.png"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\gallery\\company-1.png",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\gallery\\company-1.png",
       "PackagePath": "staticwebassets\\img\\gallery\\company-1.png"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\gallery\\company-2.png",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\gallery\\company-2.png",
       "PackagePath": "staticwebassets\\img\\gallery\\company-2.png"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\gallery\\company-3.png",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\gallery\\company-3.png",
       "PackagePath": "staticwebassets\\img\\gallery\\company-3.png"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\gallery\\company-4.png",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\gallery\\company-4.png",
       "PackagePath": "staticwebassets\\img\\gallery\\company-4.png"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\gallery\\company-5.png",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\gallery\\company-5.png",
       "PackagePath": "staticwebassets\\img\\gallery\\company-5.png"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\gallery\\company-6.png",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\gallery\\company-6.png",
       "PackagePath": "staticwebassets\\img\\gallery\\company-6.png"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\gallery\\u.png",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\gallery\\u.png",
       "PackagePath": "staticwebassets\\img\\gallery\\u.png"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\gallery\\user-1.png",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\gallery\\user-1.png",
       "PackagePath": "staticwebassets\\img\\gallery\\user-1.png"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\gallery\\user-2.png",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\gallery\\user-2.png",
       "PackagePath": "staticwebassets\\img\\gallery\\user-2.png"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\gallery\\user-3.png",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\gallery\\user-3.png",
       "PackagePath": "staticwebassets\\img\\gallery\\user-3.png"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\icons\\footer-logo.png",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\icons\\footer-logo.png",
       "PackagePath": "staticwebassets\\img\\icons\\footer-logo.png"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\icons\\logo.png",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\icons\\logo.png",
       "PackagePath": "staticwebassets\\img\\icons\\logo.png"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\Category-bg.png",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\Category-bg.png",
       "PackagePath": "staticwebassets\\img\\illustrations\\Category-bg.png"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\bg.png",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\bg.png",
       "PackagePath": "staticwebassets\\img\\illustrations\\bg.png"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\come-on-join.png",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\come-on-join.png",
       "PackagePath": "staticwebassets\\img\\illustrations\\come-on-join.png"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\consultancy.png",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\consultancy.png",
       "PackagePath": "staticwebassets\\img\\illustrations\\consultancy.png"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\design.png",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\design.png",
       "PackagePath": "staticwebassets\\img\\illustrations\\design.png"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\education.png",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\education.png",
       "PackagePath": "staticwebassets\\img\\illustrations\\education.png"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\feature.png",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\feature.png",
       "PackagePath": "staticwebassets\\img\\illustrations\\feature.png"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\finance.png",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\finance.png",
       "PackagePath": "staticwebassets\\img\\illustrations\\finance.png"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\footer-bg.png",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\footer-bg.png",
       "PackagePath": "staticwebassets\\img\\illustrations\\footer-bg.png"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\footer.png",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\footer.png",
       "PackagePath": "staticwebassets\\img\\illustrations\\footer.png"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\hero-bg.png",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\hero-bg.png",
       "PackagePath": "staticwebassets\\img\\illustrations\\hero-bg.png"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\jobs.png",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\jobs.png",
       "PackagePath": "staticwebassets\\img\\illustrations\\jobs.png"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\passion.png",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\passion.png",
       "PackagePath": "staticwebassets\\img\\illustrations\\passion.png"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\production.png",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\production.png",
       "PackagePath": "staticwebassets\\img\\illustrations\\production.png"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\programmer.png",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\programmer.png",
       "PackagePath": "staticwebassets\\img\\illustrations\\programmer.png"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\search.png",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\search.png",
       "PackagePath": "staticwebassets\\img\\illustrations\\search.png"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\logo.png",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\logo.png",
       "PackagePath": "staticwebassets\\img\\logo.png"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\js\\boostrap-navbar.js",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\js\\boostrap-navbar.js",
       "PackagePath": "staticwebassets\\js\\boostrap-navbar.js"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\js\\site.js",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\js\\theme.js",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\js\\theme.js",
       "PackagePath": "staticwebassets\\js\\theme.js"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\js\\theme.js.map",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\js\\theme.js.map",
       "PackagePath": "staticwebassets\\js\\theme.js.map"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {

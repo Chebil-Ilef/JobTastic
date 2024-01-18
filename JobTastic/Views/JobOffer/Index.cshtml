@@ -5,73 +5,92 @@
 @{
     ViewData["Title"] = "Job offers";
 }
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
 
-<h3>@ViewData["Title"] <span class="badge">@ViewData["JobOfferCount"]</span></h3>
-<hr />
-<p>
+    <!-- ===============================================-->
+    <!--    Stylesheets-->
+    <!-- ===============================================-->
+    <link href="~/css/theme.css" rel="stylesheet" />
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/css/style.css" rel="stylesheet">
 
-</p>
-<form asp-action="Search" method="get" class="form-inline">
-    @if (await AuthService.IsSignedIn(User))
-    {
-        <a asp-action="Create" class="btn btn-success btn-sm">Create</a>
-    }
-    <input name="phrase" class="form-control input-sm" placeholder="@ViewData["phrase"]" autofocus/>
-    <input type="submit" value="Search" class="btn btn-default btn-sm"/>
-</form>
-<table class="table table-hover">
-    <thead>
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Author)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.JobCategory)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.JobType)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Submitted)
-        </th>
-        <th></th>
-    </tr>
-    </thead>
-    <tbody>
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                <p asp-display-for="@item.Author.Email"></p>
-            </td>
-            <td>
-                <p asp-display-for="@item.Title"></p>
-            </td>
-            <td>
-                <p asp-display-for="@item.JobCategory.Name"></p>
-            </td>
-            <td>
-                <p asp-display-for="@item.JobType.Name"></p>
-            </td>
-            <td>
-                <p asp-display-for="@item.Submitted"></p>
-            </td>
-            <td>
-                @if (@item.CanEdit)
-                {
-                    <a asp-action="Edit" asp-route-id="@item.JobOfferId" class="btn btn-primary btn-sm">Edit</a>
-                    <a asp-action="Details" asp-route-id="@item.JobOfferId" class="btn btn-info btn-sm">Details</a>
-                    <a asp-action="Delete" asp-route-id="@item.JobOfferId" class="btn btn-danger btn-sm">Delete</a>
-                }
-                else
-                {
-                    <a asp-action="Details" asp-route-id="@item.JobOfferId" class="btn btn-info btn-sm">Details</a>
-                }
-            </td>
-        </tr>
-    }
-    </tbody>
-</table>
+
+</head>
+
+<main class="main" id="top">
+    <section class="py-0" id="home">
+        
+        <div class="container">
+            <div class="row align-items-center min-vh-75 min-vh-md-100">
+                <div class="col-md-7 col-lg-6 py-6 text-sm-start text-center">
+                    <h1>@ViewData["Title"]</h1>
+                    <div class="pt-3">
+                        <form asp-action="Search" method="get" class="form-inline">
+                            @if (await AuthService.IsSignedIn(User))
+                            {
+                                <a asp-action="Create" class="btn btn-success btn-sm">Create</a>
+                            }
+                            <input name="phrase" class="form-control input-sm" placeholder="@ViewData["phrase"]" autofocus />
+                            <input type="submit" value="Search" class="btn btn-default btn-sm" />
+                        </form>
+                    </div>
+                </div>
+
+                <div class="job-listing-area pt-120 pb-120">
+                    <div class="container">
+                        <div class="row">
+                            <!-- Right content -->
+                                <!-- Featured_job_start -->
+                                <section class="featured-job-area">
+                                    <div class="container">
+                                        <!-- Count of Job list Start -->
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="count-job mb-35">
+                                                    <span>@Model.Count() offers found</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Count of Job list End -->
+                                        <!-- single-job-content -->
+                                        @foreach (var item in Model)
+                                        {
+                                            <div class="single-job-items mb-30">
+                                                <div class="job-items">
+                                                    <div class="job-tittle job-tittle2">
+                                                    <a asp-action="Details" asp-route-id="@item.JobOfferId" >
+                                                        <h4>@Html.DisplayFor(modelItem => item.Title)</h4>
+                                                        </a>
+                                                        <ul>
+                                                        <li>@Html.DisplayFor(modelItem => item.Author.Email)</li>
+                                                        <li>@Html.DisplayFor(modelItem => item.JobCategory.Name)</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="items-link items-link2 f-right">
+                                                <span class="btn btn-info btn-sm">@Html.DisplayFor(modelItem => item.JobType.Name)</span>
+                                                <span>@Html.DisplayFor(modelItem => item.Submitted)</span>
+                                                </div>
+                                            </div>
+                                        }  
+                                    </div>
+                                </section>
+                                <!-- Featured_job_end -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Job List Area End -->             
+            </div>
+  
+        </div>
+
+
+</section>
+</main>
