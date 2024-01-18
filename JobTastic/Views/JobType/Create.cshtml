@@ -1,0 +1,35 @@
+﻿@model JobTastic.Models.JobTypeViewModels.CreateJobTypeViewModel
+
+@{
+    ViewData["Title"] = "Create - Job Type";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2>Create Job Type</h2>
+            <hr />
+
+            <form asp-action="Create">
+                <div asp-validation-summary="All" class="text-danger"></div>
+
+                <div class="form-group">
+                    <label asp-for="@Model.Name" class="control-label">Job Type Name</label>
+                    <input asp-for="@Model.Name" class="form-control" autofocus />
+                    <span asp-validation-for="@Model.Name" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success btn-sm">Create</button>
+                    <a asp-action="Index" class="btn btn-default btn-sm ml-2">Back to List</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

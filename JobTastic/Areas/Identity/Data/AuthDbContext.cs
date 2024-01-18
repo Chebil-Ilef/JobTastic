@@ -1,4 +1,5 @@
 ﻿using JobTastic.Areas.Identity.Data;
+using JobTastic.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -17,4 +18,9 @@ public class AuthDbContext : IdentityDbContext<ApplicationUser>
         base.OnModelCreating(builder);
        
     }
+    // DbSet properties for your application entities
+    public  DbSet<JobCategory> JobCategories { get; set; }
+    public  DbSet<JobType> JobTypes { get; set; }
+    public  DbSet<JobOffer> JobOffers { get; set; }
+    public  DbSet<ApplicationUser> ApplicationUsers { get; set; }
 }

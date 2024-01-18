@@ -5,8 +5,28 @@
       "PackagePath": "staticwebassets\\JobTastic.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\css\\contact.css",
+      "PackagePath": "staticwebassets\\css\\contact.css"
+    },
+    {
       "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\css\\theme-rtl.css",
+      "PackagePath": "staticwebassets\\css\\theme-rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\css\\theme-rtl.css.map",
+      "PackagePath": "staticwebassets\\css\\theme-rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\css\\theme-rtl.min.css",
+      "PackagePath": "staticwebassets\\css\\theme-rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\css\\theme-rtl.min.css.map",
+      "PackagePath": "staticwebassets\\css\\theme-rtl.min.css.map"
     },
     {
       "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\css\\theme.css",
@@ -17,12 +37,188 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\.gitkeep",
+      "PackagePath": "staticwebassets\\img\\.gitkeep"
+    },
+    {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\favicons\\android-chrome-192x192.png",
+      "PackagePath": "staticwebassets\\img\\favicons\\android-chrome-192x192.png"
+    },
+    {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\favicons\\android-chrome-512x512.png",
+      "PackagePath": "staticwebassets\\img\\favicons\\android-chrome-512x512.png"
+    },
+    {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\favicons\\apple-touch-icon.png",
+      "PackagePath": "staticwebassets\\img\\favicons\\apple-touch-icon.png"
+    },
+    {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\favicons\\browserconfig.xml",
+      "PackagePath": "staticwebassets\\img\\favicons\\browserconfig.xml"
+    },
+    {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\favicons\\favicon-16x16.png",
+      "PackagePath": "staticwebassets\\img\\favicons\\favicon-16x16.png"
+    },
+    {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\favicons\\favicon-32x32.png",
+      "PackagePath": "staticwebassets\\img\\favicons\\favicon-32x32.png"
+    },
+    {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\favicons\\favicon.ico",
+      "PackagePath": "staticwebassets\\img\\favicons\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\favicons\\manifest.json",
+      "PackagePath": "staticwebassets\\img\\favicons\\manifest.json"
+    },
+    {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\favicons\\mstile-150x150.png",
+      "PackagePath": "staticwebassets\\img\\favicons\\mstile-150x150.png"
+    },
+    {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\favicons\\site.webmanifest",
+      "PackagePath": "staticwebassets\\img\\favicons\\site.webmanifest"
+    },
+    {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\gallery\\MANIAC.jpg",
+      "PackagePath": "staticwebassets\\img\\gallery\\MANIAC.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\gallery\\Polygon 1 copy 3.png",
+      "PackagePath": "staticwebassets\\img\\gallery\\Polygon 1 copy 3.png"
+    },
+    {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\gallery\\company-1.png",
+      "PackagePath": "staticwebassets\\img\\gallery\\company-1.png"
+    },
+    {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\gallery\\company-2.png",
+      "PackagePath": "staticwebassets\\img\\gallery\\company-2.png"
+    },
+    {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\gallery\\company-3.png",
+      "PackagePath": "staticwebassets\\img\\gallery\\company-3.png"
+    },
+    {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\gallery\\company-4.png",
+      "PackagePath": "staticwebassets\\img\\gallery\\company-4.png"
+    },
+    {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\gallery\\company-5.png",
+      "PackagePath": "staticwebassets\\img\\gallery\\company-5.png"
+    },
+    {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\gallery\\company-6.png",
+      "PackagePath": "staticwebassets\\img\\gallery\\company-6.png"
+    },
+    {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\gallery\\u.png",
+      "PackagePath": "staticwebassets\\img\\gallery\\u.png"
+    },
+    {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\gallery\\user-1.png",
+      "PackagePath": "staticwebassets\\img\\gallery\\user-1.png"
+    },
+    {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\gallery\\user-2.png",
+      "PackagePath": "staticwebassets\\img\\gallery\\user-2.png"
+    },
+    {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\gallery\\user-3.png",
+      "PackagePath": "staticwebassets\\img\\gallery\\user-3.png"
+    },
+    {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\icons\\footer-logo.png",
+      "PackagePath": "staticwebassets\\img\\icons\\footer-logo.png"
+    },
+    {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\icons\\logo.png",
+      "PackagePath": "staticwebassets\\img\\icons\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\Category-bg.png",
+      "PackagePath": "staticwebassets\\img\\illustrations\\Category-bg.png"
+    },
+    {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\bg.png",
+      "PackagePath": "staticwebassets\\img\\illustrations\\bg.png"
+    },
+    {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\come-on-join.png",
+      "PackagePath": "staticwebassets\\img\\illustrations\\come-on-join.png"
+    },
+    {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\consultancy.png",
+      "PackagePath": "staticwebassets\\img\\illustrations\\consultancy.png"
+    },
+    {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\design.png",
+      "PackagePath": "staticwebassets\\img\\illustrations\\design.png"
+    },
+    {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\education.png",
+      "PackagePath": "staticwebassets\\img\\illustrations\\education.png"
+    },
+    {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\feature.png",
+      "PackagePath": "staticwebassets\\img\\illustrations\\feature.png"
+    },
+    {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\finance.png",
+      "PackagePath": "staticwebassets\\img\\illustrations\\finance.png"
+    },
+    {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\footer-bg.png",
+      "PackagePath": "staticwebassets\\img\\illustrations\\footer-bg.png"
+    },
+    {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\footer.png",
+      "PackagePath": "staticwebassets\\img\\illustrations\\footer.png"
+    },
+    {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\hero-bg.png",
+      "PackagePath": "staticwebassets\\img\\illustrations\\hero-bg.png"
+    },
+    {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\jobs.png",
+      "PackagePath": "staticwebassets\\img\\illustrations\\jobs.png"
+    },
+    {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\passion.png",
+      "PackagePath": "staticwebassets\\img\\illustrations\\passion.png"
+    },
+    {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\production.png",
+      "PackagePath": "staticwebassets\\img\\illustrations\\production.png"
+    },
+    {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\programmer.png",
+      "PackagePath": "staticwebassets\\img\\illustrations\\programmer.png"
+    },
+    {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\search.png",
+      "PackagePath": "staticwebassets\\img\\illustrations\\search.png"
+    },
+    {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\logo.png",
+      "PackagePath": "staticwebassets\\img\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\js\\boostrap-navbar.js",
+      "PackagePath": "staticwebassets\\js\\boostrap-navbar.js"
+    },
+    {
       "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
       "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\js\\theme.js",
       "PackagePath": "staticwebassets\\js\\theme.js"
+    },
+    {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\js\\theme.js.map",
+      "PackagePath": "staticwebassets\\js\\theme.js.map"
     },
     {
       "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\lib\\bootstrap\\LICENSE",

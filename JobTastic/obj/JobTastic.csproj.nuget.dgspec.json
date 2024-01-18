@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GL3\\Framework ASP.net\\Projet\\JobTastic\\JobTastic.csproj": {}
+    "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\JobTastic.csproj": {}
   },
   "projects": {
-    "D:\\GL3\\Framework ASP.net\\Projet\\JobTastic\\JobTastic.csproj": {
+    "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\JobTastic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GL3\\Framework ASP.net\\Projet\\JobTastic\\JobTastic.csproj",
+        "projectUniqueName": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\JobTastic.csproj",
         "projectName": "JobTastic",
-        "projectPath": "D:\\GL3\\Framework ASP.net\\Projet\\JobTastic\\JobTastic.csproj",
-        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "D:\\GL3\\Framework ASP.net\\Projet\\JobTastic\\obj\\",
+        "projectPath": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\JobTastic.csproj",
+        "packagesPath": "C:\\Users\\Asma\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Asma\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -45,6 +45,18 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "Autofac": {
+              "target": "Package",
+              "version": "[7.1.0, )"
+            },
+            "Autofac.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[7.2.0, )"
+            },
             "MailKit": {
               "target": "Package",
               "version": "[4.3.0, )"
@@ -54,6 +66,10 @@
               "version": "[6.0.23, )"
             },
             "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[6.0.23, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.23, )"
             },
