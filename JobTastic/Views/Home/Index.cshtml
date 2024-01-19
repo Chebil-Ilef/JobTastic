@@ -42,7 +42,8 @@
 
 @if (User.IsInRole("Admin"))
 {
-    <main class="main" id="top">
+    Html.RenderPartial("_AdminDashboard");
+    /*<main class="main" id="top">
 
         <section class="py-0" id="home">
             <div class="bg-holder d-none d-sm-block" style="background-image:url(/img/illustrations/hero-bg.png);background-position:right top;background-size:contain;">
@@ -62,7 +63,7 @@
                 </div>
             </div>
         </section>
-    </main>
+    </main>*/
 }
 else if (User.IsInRole("Recruiter"))
 {
