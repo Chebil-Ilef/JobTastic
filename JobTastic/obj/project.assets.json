@@ -11781,23 +11781,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Asma\\.nuget\\packages\\": {},
+    "C:\\Users\\msi\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\JobTastic.csproj",
+      "projectUniqueName": "C:\\Users\\msi\\OneDrive\\Bureau\\jobtastic\\JobTastic\\JobTastic.csproj",
       "projectName": "JobTastic",
-      "projectPath": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\JobTastic.csproj",
-      "packagesPath": "C:\\Users\\Asma\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\obj\\",
+      "projectPath": "C:\\Users\\msi\\OneDrive\\Bureau\\jobtastic\\JobTastic\\JobTastic.csproj",
+      "packagesPath": "C:\\Users\\msi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\msi\\OneDrive\\Bureau\\jobtastic\\JobTastic\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Asma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\msi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
