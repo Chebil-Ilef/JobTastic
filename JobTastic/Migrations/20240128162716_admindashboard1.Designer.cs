@@ -4,6 +4,7 @@ using JobTastic.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JobTastic.Migrations
 {
     [DbContext(typeof(AuthDbContext))]
-    partial class AuthDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240128162716_admindashboard1")]
+    partial class admindashboard1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -101,6 +103,12 @@ namespace JobTastic.Migrations
 
             modelBuilder.Entity("JobTastic.Models.AdminDashboardViewModel", b =>
                 {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
                     b.Property<int>("NumberOfJobSearchers")
                         .HasColumnType("int");
 
@@ -112,6 +120,8 @@ namespace JobTastic.Migrations
 
                     b.Property<int>("TotalOffers")
                         .HasColumnType("int");
+
+                    b.HasKey("Id");
 
                     b.ToTable("AdminDashboardViewModel");
                 });
@@ -149,13 +159,6 @@ namespace JobTastic.Migrations
 
                     b.Property<DateTime>("LastEdit")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("Location")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal>("Salary")
-                        .HasColumnType("decimal(18,2)");
 
                     b.Property<DateTime>("Submitted")
                         .HasColumnType("datetime2");
