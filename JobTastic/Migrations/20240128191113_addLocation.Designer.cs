@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JobTastic.Migrations
 {
     [DbContext(typeof(AuthDbContext))]
-    [Migration("20231216181141_Added-Role")]
-    partial class AddedRole
+    [Migration("20240128191113_addLocation")]
+    partial class addLocation
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -99,6 +99,100 @@ namespace JobTastic.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+                });
+
+            modelBuilder.Entity("JobTastic.Models.AdminDashboardViewModel", b =>
+                {
+                    b.Property<int>("NumberOfJobSearchers")
+                        .HasColumnType("int");
+
+                    b.Property<int>("NumberOfRecruiters")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TodaysOffers")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TotalOffers")
+                        .HasColumnType("int");
+
+                    b.ToTable("AdminDashboardViewModel");
+                });
+
+            modelBuilder.Entity("JobTastic.Models.JobCategory", b =>
+                {
+                    b.Property<string>("JobCategoryId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("JobCategoryId");
+
+                    b.ToTable("JobCategories");
+                });
+
+            modelBuilder.Entity("JobTastic.Models.JobOffer", b =>
+                {
+                    b.Property<string>("jobOfferId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("JobCategoryId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("JobTypeId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("LastEdit")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Location")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Submitted")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Visits")
+                        .HasColumnType("int");
+
+                    b.Property<string>("authorId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("jobOfferId");
+
+                    b.HasIndex("JobCategoryId");
+
+                    b.HasIndex("JobTypeId");
+
+                    b.HasIndex("authorId");
+
+                    b.ToTable("JobOffers");
+                });
+
+            modelBuilder.Entity("JobTastic.Models.JobType", b =>
+                {
+                    b.Property<string>("JobTypeId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("JobTypeId");
+
+                    b.ToTable("JobTypes");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -238,6 +332,33 @@ namespace JobTastic.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("JobTastic.Models.JobOffer", b =>
+                {
+                    b.HasOne("JobTastic.Models.JobCategory", "jobcategory")
+                        .WithMany("JobOffers")
+                        .HasForeignKey("JobCategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("JobTastic.Models.JobType", "JobType")
+                        .WithMany("JobOffers")
+                        .HasForeignKey("JobTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("JobTastic.Areas.Identity.Data.ApplicationUser", "author")
+                        .WithMany()
+                        .HasForeignKey("authorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("JobType");
+
+                    b.Navigation("author");
+
+                    b.Navigation("jobcategory");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -287,6 +408,16 @@ namespace JobTastic.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("JobTastic.Models.JobCategory", b =>
+                {
+                    b.Navigation("JobOffers");
+                });
+
+            modelBuilder.Entity("JobTastic.Models.JobType", b =>
+                {
+                    b.Navigation("JobOffers");
                 });
 #pragma warning restore 612, 618
         }

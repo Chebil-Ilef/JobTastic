@@ -1,27 +1,26 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
-using System.Diagnostics.Metrics;
 
 #nullable disable
 
 namespace JobTastic.Migrations
 {
-    public partial class AddedRole : Migration
+    public partial class addSalary : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<string>(
-                name: "SelectedRole",
-                table: "AspNetUsers",
-                type: "nvarchar(max)",
+            migrationBuilder.AddColumn<decimal>(
+                name: "Salary",
+                table: "JobOffers",
+                type: "decimal(18,2)",
                 nullable: false,
-                defaultValue: "");
+                defaultValue: 0m);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "SelectedRole",
-                table: "AspNetUsers");
+                name: "Salary",
+                table: "JobOffers");
         }
     }
 }

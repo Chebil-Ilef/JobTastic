@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ocznroPT0tCXJFrNHWNuQ0mt0h5QW29VWiEi+uVPebROpDszLxWKtCJqQoR0T/ZQUwkNL3GS3CikZh1XsntUcA==",
+  "dgSpecHash": "UDlnWhWWASHijVI+1sTAJDk1nOOaYyrif6EY91ilvtV7o3QAGH1U7VQcYXAV9QoS6KuA39BLF4ewgAni6sYWCg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\msi\\OneDrive\\Bureau\\jobtastic\\JobTastic\\JobTastic.csproj",
+  "projectFilePath": "C:\\Users\\msi\\OneDrive\\Bureau\\test\\JobTastic\\JobTastic.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\msi\\.nuget\\packages\\autofac\\7.1.0\\autofac.7.1.0.nupkg.sha512",
     "C:\\Users\\msi\\.nuget\\packages\\autofac.extensions.dependencyinjection\\7.2.0\\autofac.extensions.dependencyinjection.7.2.0.nupkg.sha512",
