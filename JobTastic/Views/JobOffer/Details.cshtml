@@ -50,6 +50,18 @@
         <dd>
             @Html.DisplayFor(model => model.Description)
         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Salary)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Salary)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Location)
+        </dd>
 
         <dt>
             @Html.DisplayNameFor(model => model.Visits)
@@ -63,4 +75,5 @@
     <a asp-action="Edit" asp-route-id="@Model.JobOfferId" class="btn btn-primary btn-sm">Edit</a>
     }
     <a asp-action="Index" class="btn btn-default btn-sm">Back to list</a>
+    <a asp-action="Apply" asp-route-id="@Model.JobOfferId" class="btn btn-primary btn-sm">Apply</a>
 </div>
