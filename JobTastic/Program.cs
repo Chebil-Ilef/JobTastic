@@ -10,6 +10,9 @@ using JobTastic.Services.IServices;
 using AutoMapper;
 using Microsoft.AspNetCore.Hosting;
 using BulletinBoard.Infrastructure.AutoMapper;
+using Autofac.Core;
+using JobTastic.Controllers;
+using Microsoft.Extensions.Logging;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("AuthDbContextConnection") ?? throw new InvalidOperationException("Connection string 'sendMailContextConnection' not found.");
@@ -47,10 +50,12 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 
 
+
 // Configuration added here
 builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
 
 builder.Services.AddTransient<IMailService, MailService>();
+builder.Services.AddLogging();
 
 var app = builder.Build();
 

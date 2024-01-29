@@ -1,0 +1,88 @@
+﻿/* Reset some default browser styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set a background color for the entire page */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Style the main heading */
+h1 {
+    color: #343a40;
+    font-size: 2.5rem;
+}
+
+/* Style the badge */
+.badge {
+    background-color: #28a745;
+    color: #fff;
+    padding: 0.3rem 0.5rem;
+    margin-left: 0.5rem;
+    border-radius: 0.25rem;
+}
+
+/* Style the search form */
+form {
+    margin-top: 1rem;
+}
+
+/* Style the create button */
+.btn-success {
+    background-color: #28a745;
+    color: #fff;
+}
+
+/* Style the input fields */
+.form-control {
+    width: 200px;
+    margin-right: 0.5rem;
+}
+
+/* Style the search button */
+.btn-default {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Style the job listing area */
+.job-listing-area {
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+    padding: 2rem;
+}
+
+/* Style the count job text */
+.count-job span {
+    color: #007bff;
+}
+
+/* Style the single job items */
+.single-job-items {
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Style the job title */
+.job-tittle h4 {
+    color: #343a40;
+}
+
+/* Style the items link */
+.items-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Style the info button */
+.btn-info {
+    background-color: #17a2b8;
+    color: #fff;
+}

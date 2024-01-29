@@ -22,6 +22,9 @@ namespace JobTastic.Models
         public DateTime Submitted { get; set; }
         public DateTime LastEdit { get; set; }
         public int Visits { get; set; }
+        public string Location { get; set; }  
+        
+        public Decimal Salary { get; set; }
 
 
     }

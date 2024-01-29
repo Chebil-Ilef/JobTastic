@@ -99,6 +99,23 @@ namespace JobTastic.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("JobTastic.Models.AdminDashboardViewModel", b =>
+                {
+                    b.Property<int>("NumberOfJobSearchers")
+                        .HasColumnType("int");
+
+                    b.Property<int>("NumberOfRecruiters")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TodaysOffers")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TotalOffers")
+                        .HasColumnType("int");
+
+                    b.ToTable("AdminDashboardViewModel");
+                });
+
             modelBuilder.Entity("JobTastic.Models.JobCategory", b =>
                 {
                     b.Property<string>("JobCategoryId")
@@ -110,7 +127,7 @@ namespace JobTastic.Migrations
 
                     b.HasKey("JobCategoryId");
 
-                    b.ToTable("JobCategories", (string)null);
+                    b.ToTable("JobCategories");
                 });
 
             modelBuilder.Entity("JobTastic.Models.JobOffer", b =>
@@ -132,6 +149,13 @@ namespace JobTastic.Migrations
 
                     b.Property<DateTime>("LastEdit")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Location")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Salary")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<DateTime>("Submitted")
                         .HasColumnType("datetime2");
@@ -155,7 +179,7 @@ namespace JobTastic.Migrations
 
                     b.HasIndex("authorId");
 
-                    b.ToTable("JobOffers", (string)null);
+                    b.ToTable("JobOffers");
                 });
 
             modelBuilder.Entity("JobTastic.Models.JobType", b =>
@@ -169,7 +193,7 @@ namespace JobTastic.Migrations
 
                     b.HasKey("JobTypeId");
 
-                    b.ToTable("JobTypes", (string)null);
+                    b.ToTable("JobTypes");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

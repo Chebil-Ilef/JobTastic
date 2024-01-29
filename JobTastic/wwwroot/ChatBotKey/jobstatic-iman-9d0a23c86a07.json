@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "jobstatic-iman",
+  "private_key_id": "9d0a23c86a07a4ecf0272a598b0d3c5ab71d9544",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCvl/6hlh5Pzsfz\nMkK1YGFHgKQUhwhp7n43CpVlLGk0tZfzIHuCcV2N4Kdh6VjeAHASFyr+5ROs8uJR\nT2ziM1MpXas0PCk82wWIX5Ecvz1wPRWP6fb2odun4g714ahSV9Ye3eCtloKKzRXQ\nVfem/gUNxSRy2/sd2oDqkOdMJX4neEFEaDaeGBglF1GXqJlIbG4y5rFxJ2cE64zr\ncQicq8XbWKi/INsiwNhIHX26Fh23VCS7wnp7W3rBiWDNHwsWWBxY+FxJdO7t47md\n33iQZio1mrYLMUwtWfHN1BLxX4Ij168nYlxdDY7oBQkf+o2H5GZ9s2RDAncYtJI0\nXVRFfXYRAgMBAAECggEABi/y8rQWFxiUP9qWEmtQyOAsl/BpUIdCdrN2em6h+eUf\nXgYs3UwGldq0Id14X8vlkbjz2fBjPOQVlgkjDxuWdcs6yUVIlt/+WMpKSW2n2e9o\nazjoASkzUt34CjwPI5tRUebeVVY2fR2Bzrn6wc1VYFahefPMVvvVhf5rYgniVpG6\n6gHRpbiYsyXKjLWxiTr+nkJmQFJ3IxX8KD9ZDlvxusg3AxgqwsGB+XqVNM2Tj4xC\nHl27L2fwQWgWYwpf7EDXXq9Ir6AtNlNpdCVK7VAe1Zu81nW9v9SxFAsXgTaVZ3i6\n+S4ZeJ25swdCOt8Bco/fW1EYdSpygtwlOE8zc7i9SQKBgQDoewhm/G60TW1ScXnl\nCu7ywVA8TEmqOo1zEBzwdx0guH/rfqpd2cefjP62JRdJ0Dmlc5OKKbW+4VI5YXz5\nQp7ooC3pgv08kykxrsl62h5JiEJIQfdLJE5TOF40DUeJHnKjh+kCQXXr8q7Z7E5W\n8V1LswaClvhOClqsSqNKp8i7mQKBgQDBW6kZCYMGIeSI5cHQ05YjB9Qjic4BRpGa\nlhDSU2MYqROxCYN686YfevEazTzUggbtKfbBq4r9hlGpj5+K325cOSCK8VjpEQJY\nIUITgImuruYPAnFgc6LF7PoFKHkbYpUYDH5KmwTA8KOfEJQ4E7pQxY2yII921FQB\nLfHObV/ZOQKBgQDCga2V/L3ivKUqxSZnK66gDH1E9c7sTfDqxCByUDZemf7s2R1R\nSFRseVriqkXBzCVu+DQI9LzK51oUCCy3n7W0i8/d/2pAtB9TIhoQX03X19kc+5Qb\nmlSt7AtlIXcokgD4MU4SRRKURodkbQFeXLLiEvbva8B0CtWyMQBOBfM8gQKBgQC9\nS58gg89iEYxK+aPlbT9uzBtDL4YeeZfSX1fYkQpS+jPs/gNaO25HI3UnaAZFhYaC\naLLKp8ZKrVUFSzZGHrdMUiEp5V3FzoEdBnJJ5WzlNxTDXQDiDFMusfGTWyw1Qy3z\nfUemgl0FBpEpCHIS9D1TFhTCbl4FV5lmDjTMgwdzAQKBgQCLwrku1CnTFOPZozyw\nWeR4c7Rx526nQUbHhAy1ngAVfLx92ODXgPYQCAzfcH6adYZ+yx9cQ1RAR/XK/HeP\ngLTDYYLWrfPy3HaU5dnL84Uyh9NioDGA/RnWPjAUiop02wnFS31/BdOAmVUGfk8k\n2TIZR0oGdRSGbL8BVDjPIECnFQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "aideuser-437@jobstatic-iman.iam.gserviceaccount.com",
+  "client_id": "111938092861730833797",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/aideuser-437%40jobstatic-iman.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
