@@ -1,14 +1,20 @@
-﻿@model IEnumerable<JobTastic.Models.JobCategoryViewModels.JobCategoryViewModel>
+﻿@using JobTastic.Services.IServices;
+@model IEnumerable<JobTastic.Models.JobOfferViewModels.JobOfferViewModel>
+@inject IAuthService AuthService
 
 @{
-    ViewData["Title"] = "Job Category";
+    ViewData["Title"] = "Job offers";
 }
 <head>
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>JobTastic Admin</title>
     <!-- plugins:css -->
+    <link href="~/css/theme.css" rel="stylesheet" />
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="~/vendors/feather/feather.css">
     <link rel="stylesheet" href="~/vendors/ti-icons/css/themify-icons.css">
     <link rel="stylesheet" href="~/vendors/css/vendor.bundle.base.css">
@@ -92,39 +98,68 @@
                     </li>
                 </ul>
             </nav>
+           
             <div class="main-panel">
                 <div class="content-wrapper">
+                    <main class="main" id="top">
+                        <section class="py-0" id="home">
 
-                    <h3>@ViewData["Title"]</h3>
-                    <hr />
-                    <p>
-                        <a asp-action="Create" class="btn btn-success btn-sm">Create</a>
-                    </p>
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Name)
-                                </th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (var item in Model)
-                            {
-                                <tr>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Name)
-                                    </td>
-                                    <td>
-                                        <a asp-action="Edit" asp-route-id="@item.JobCategoryId" class="btn btn-primary btn-sm">Edit</a>
-                                        <a asp-action="Details" asp-route-id="@item.JobCategoryId" class="btn btn-info btn-sm">Details</a>
-                                        <a asp-action="Delete" asp-route-id="@item.JobCategoryId" class="btn btn-danger btn-sm">Delete</a>
-                                    </td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
+                            <div class="container">
+                                <div class="row align-items-center min-vh-75 min-vh-md-100">
+                                    <div class="col-md-7 col-lg-6 py-6 text-sm-start text-center">
+                                        <h1>@ViewData["Title"]</h1>
+                                    </div>
+
+                                    <div class="job-listing-area pt-120 pb-120">
+                                        <div class="container">
+                                            <div class="row">
+                                                <!-- Count of Job list Start -->
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="count-job mb-35">
+                                                            <span>@Model.Count() offers found</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Count of Job list End -->
+                                                <!-- Right content -->
+                                                <!-- Featured_job_start -->
+                                                <section class="featured-job-area">
+                                                    <div class="container">
+                                                        <!-- single-job-content -->
+                                                        @foreach (var item in Model)
+                                                        {
+                                                            <div class="single-job-items mb-30">
+                                                                <div class="job-items">
+                                                                    <div class="job-tittle job-tittle2">
+                                                                        <h4>@Html.DisplayFor(modelItem => item.Title)</h4>
+                                                                        <ul>
+                                                                            <li>Author: @Html.DisplayFor(modelItem => item.Author.Email)</li>
+                                                                            <li>Category: @Html.DisplayFor(modelItem => item.JobCategory.Name)</li>
+                                                                            <li>Location: @Html.DisplayFor(modelItem => item.Location)</li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="items-link items-link2 f-right">
+                                                                    <span class="btn btn-info btn-sm">@Html.DisplayFor(modelItem => item.JobType.Name)</span>
+                                                                    <span>@Html.DisplayFor(modelItem => item.Submitted)</span>
+                                                                </div>
+                                                            </div>
+                                                        }
+                                                    </div>
+                                                </section>
+                                                <!-- Featured_job_end -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Job List Area End -->
+                                </div>
+
+                            </div>
+
+
+                        </section>
+                    </main>
                 </div>
             </div>
             <!-- main-panel ends -->

@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace JobTastic.Controllers
 {
-  //  [Authorize(Roles = RoleHelper.Administrator)]
+    [Authorize(Roles = RoleHelper.Admin)]
     public class JobTypeController : Controller
     {
         private readonly IJobTypeService _jobTypeService;

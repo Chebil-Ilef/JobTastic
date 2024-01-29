@@ -8,6 +8,7 @@ using JobTastic.Models.JobOfferViewModels;
 using JobTastic.Services.IServices;
 using Microsoft.AspNetCore.Authorization;
 using JobTastic.Models.JobTypeViewModels;
+using JobTastic.Helpers;
 
 namespace JobTastic.Controllers
 {
@@ -63,6 +64,20 @@ namespace JobTastic.Controllers
             foreach (var offer in vms)
             {
                 offer.CanEdit = await _jobOfferService.CanUserEditOffer(user.Id, offer.JobOfferId);
+            }
+
+            return View(vms);
+        }
+        [Authorize(Roles = RoleHelper.Admin)]
+        public async Task<IActionResult> AdminIndex()
+        {
+            var jobOffers = await _jobOfferService.GetAllOffers();
+            var vms = _mapper.Map<IList<JobOfferViewModel>>(jobOffers);
+            ViewData["JobOfferCount"] = vms.Count;
+
+            foreach (var offer in vms)
+            {
+                offer.CanEdit = true;
             }
 
             return View(vms);

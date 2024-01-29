@@ -124,8 +124,8 @@ namespace JobTastic.Services
             
 
             return offer.author.Id == user.Id
-                   || await IsInRole(user, RoleHelper.Administrator)
-                   || await IsInRole(user, RoleHelper.Moderator);
+                   || await IsInRole(user, RoleHelper.Admin)
+                   || await IsInRole(user, RoleHelper.Recruiter);
         }
 
         public async Task<bool> IncreaseOfferViews(JobOffer offer)
