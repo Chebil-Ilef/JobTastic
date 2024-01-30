@@ -711,14 +711,31 @@ else
 }
 
 <!--  chatBot script dialogflow + kommunicate-->
+@if (User.IsInRole("Admin")==false)
+{
 <script type="text/javascript">
     (function (d, m) {
+        var userId = "@UserManager.GetUserId(User)";
         var kommunicateSettings =
-            { "appId": "10f478d18e63d9ac3c38855d60740622a", "popupWidget": true, "automaticChatOpenOnNavigation": true };
+            { "appId": "10f478d18e63d9ac3c38855d60740622a", "popupWidget": true, "automaticChatOpenOnNavigation": true, userId: userId };
         var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
         s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
         var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
         window.kommunicate = m; m._globals = kommunicateSettings;
+        let kmUser = {
+            userId: userId, //unique userId
+        };
+        let conversationObject = {
+            appId: "10f478d18e63d9ac3c38855d60740622a",
+            kmUser: JSON.stringify(kmUser)
+        };
+
+        KommunicateCapacitorPlugin.buildConversation(conversationObject).then((res) => {
+            console.log("Conversation builder success : " + JSON.stringify(res))
+        }).catch((error) => {
+            console.log("Conversation builder error : " + error)
+        });
     })(document, window.kommunicate || {});
                 /* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
 </script>
+}
