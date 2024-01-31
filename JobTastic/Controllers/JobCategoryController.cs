@@ -11,7 +11,7 @@ using AutoMapper;
 
 namespace JobTastic.Controllers
 {
-   // [Authorize(Roles = RoleHelper.Administrator)]
+    [Authorize(Roles = RoleHelper.Admin)]
     public class JobCategoryController : Controller
     {
         private readonly IJobCategoryService _jobCategoryService;
