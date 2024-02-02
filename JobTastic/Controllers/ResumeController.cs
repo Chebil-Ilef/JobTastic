@@ -130,5 +130,24 @@ namespace JobTastic.Controllers
                 Console.WriteLine($"Error deleting file: {ex.Message}");
             }
         }
+
+        public ActionResult DownloadCV(string userId)
+        {
+            // Retrieve user's CV record from the database (replace with your logic)
+            var existingCV = _dbContext.UserResumes.FirstOrDefault(r => r.UserId == userId);
+
+            if (existingCV != null && !string.IsNullOrEmpty(existingCV.ResumeFilePath))
+            {
+                // Construct the physical path of the CV file
+                var physicalPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", existingCV.ResumeFilePath);
+
+                // Provide the file for download
+                return File(physicalPath, "application/pdf", "CV.pdf");
+            }
+
+            // Handle the case where CV or file path doesn't exist
+            return RedirectToAction("ViewCVContent");
+        }
     }
 }
+

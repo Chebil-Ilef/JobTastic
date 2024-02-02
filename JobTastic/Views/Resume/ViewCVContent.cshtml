@@ -1,4 +1,10 @@
-﻿@*
+﻿@using Microsoft.AspNetCore.Identity
+@using JobTastic.Areas.Identity.Data
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
@@ -9,7 +15,15 @@
 
 @if (!string.IsNullOrEmpty(ViewBag.CVPath))
 {
+    <br />
+    <br />
+    <br />
     <iframe src="@Url.Content(ViewBag.CVPath)" style="width: 100%; height: 600px;"></iframe>
+    <br />
+    <br />
+    <br />
+    <a href="@Url.Action("DownloadCV", "Resume", new { userId=UserManager.GetUserId(User) })">Download</a>
+
 }
 else
 {

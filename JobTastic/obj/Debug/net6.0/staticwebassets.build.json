@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0YHw0J9B9vPBsxqf8fc32WYaWh+Bk4At/IXi2GOt41E=",
+  "Hash": "MbahauIFRGelrAIkXoFR95HZMNUMI2UcUOq5+c5XR04=",
   "Source": "JobTastic",
   "BasePath": "_content/JobTastic",
   "Mode": "Default",
@@ -5661,12 +5661,12 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\Uploads\\SheetRandomCouple.pdf",
+      "Identity": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\Uploads\\TD2 Solution Two continuous random variables.pdf",
       "SourceId": "JobTastic",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\",
       "BasePath": "_content/JobTastic",
-      "RelativePath": "Uploads/SheetRandomCouple.pdf",
+      "RelativePath": "Uploads/TD2 Solution Two continuous random variables.pdf",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -5675,7 +5675,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Uploads\\SheetRandomCouple.pdf"
+      "OriginalItemSpec": "wwwroot\\Uploads\\TD2 Solution Two continuous random variables.pdf"
     },
     {
       "Identity": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\vendors\\chart.js\\Chart.min.js",
