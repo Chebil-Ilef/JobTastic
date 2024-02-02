@@ -52,7 +52,8 @@ namespace JobTastic.Controllers
         public async Task<IActionResult> Index()
         {
             var jobOffers = await _jobOfferService.GetAllOffers();
-            var vms = _mapper.Map<IList<JobOfferViewModel>>(jobOffers);
+            var nonPendingJobOffers = jobOffers.Where(offer => !offer.IsPending).ToList();
+            var vms = _mapper.Map<IList<JobOfferViewModel>>(nonPendingJobOffers);
             ViewData["JobOfferCount"] = vms.Count;
 
             if (!await _authService.IsSignedIn(HttpContext.User))
@@ -72,7 +73,8 @@ namespace JobTastic.Controllers
         public async Task<IActionResult> AdminIndex()
         {
             var jobOffers = await _jobOfferService.GetAllOffers();
-            var vms = _mapper.Map<IList<JobOfferViewModel>>(jobOffers);
+            var nonPendingJobOffers = jobOffers.Where(offer => !offer.IsPending).ToList();
+            var vms = _mapper.Map<IList<JobOfferViewModel>>(nonPendingJobOffers);
             ViewData["JobOfferCount"] = vms.Count;
 
             foreach (var offer in vms)
@@ -82,6 +84,68 @@ namespace JobTastic.Controllers
 
             return View(vms);
         }
+        [Authorize(Roles = RoleHelper.Admin)]
+        public async Task<IActionResult> AdminPendingJobs()
+        {
+            var jobOffers = await _jobOfferService.GetAllOffers();
+            var PendingJobOffers = jobOffers.Where(offer => offer.IsPending).ToList();
+            var vms = _mapper.Map<IList<JobOfferViewModel>>(PendingJobOffers);
+            ViewData["JobOfferCount"] = vms.Count;
+
+            foreach (var offer in vms)
+            {
+                offer.CanEdit = true;
+            }
+
+            return View(vms);
+        }
+        /***********************************************************************************/
+
+        [HttpPost("/JobOffer/AcceptJobOffer/{id}")]
+        public async Task<IActionResult> AcceptJobOffer(string id)
+        {
+                // Fetch the job offer from the service
+                var jobOffer = await _jobOfferService.GetOfferById(id);
+
+                // Check if the job offer exists
+                if (jobOffer == null)
+                {
+                    return NotFound();
+                }
+
+                // Update the IsPending attribute to false
+                jobOffer.IsPending = false;
+
+                // Save the changes
+                var result =await _jobOfferService.Edit(jobOffer);
+            if (result)
+                return RedirectToAction(nameof(AdminPendingJobs));
+            else 
+                return NotFound();
+        }
+
+        [HttpPost("/JobOffer/DeclineAndDeleteJobOffer/{id}")]
+        public async Task<IActionResult> DeclineAndDeleteJobOffer(string id)
+        {
+                // Fetch the job offer from the service
+                var jobOffer = await _jobOfferService.GetOfferById(id);
+
+                // Check if the job offer exists
+                if (jobOffer == null)
+                {
+                    return NotFound();
+                }
+
+                // Delete the job offer
+                var result = await _jobOfferService.Delete(jobOffer);
+
+                if (result)
+                    return RedirectToAction(nameof(AdminPendingJobs));
+                else
+                    return NotFound();
+        }
+
+/***********************************************************************/
 
         [AllowAnonymous]
         public async Task<IActionResult> Search(string phrase)
@@ -156,7 +220,7 @@ namespace JobTastic.Controllers
                 JobCategories = await _jobCategoryService.GetAllCategories(),
                 JobTypes = await _jobTypeService.GetAllTypes(),
 
-        };
+            };
 
             return View(viewModel);
         }
@@ -175,6 +239,7 @@ namespace JobTastic.Controllers
 
             var jobOffer = _mapper.Map<JobOffer>(model);
             jobOffer.jobOfferId = GenerateRandomUniqueIdString();
+            jobOffer.IsPending = true;
             var result = await _jobOfferService.Add(jobOffer);
             if (result)
             {

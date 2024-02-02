@@ -26,6 +26,8 @@ namespace JobTastic.Models
         
         public Decimal Salary { get; set; }
 
+        public bool IsPending { get; set; }
+
 
     }
 }
