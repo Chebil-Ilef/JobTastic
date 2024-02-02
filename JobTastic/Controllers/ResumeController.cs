@@ -6,6 +6,7 @@ using JobTastic.Services.IServices;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using SendGrid.Helpers.Mail;
 
 namespace JobTastic.Controllers
@@ -76,7 +77,7 @@ namespace JobTastic.Controllers
 
                 // Additional processing for other form fields
                 // Redirect to a success page or display a success message
-                return RedirectToAction("ViewCVContent",user);
+                return RedirectToAction("ViewCVContent", new { UserId = user.Id });
             }
 
             // If model state is not valid, return to the form with errors
@@ -84,15 +85,15 @@ namespace JobTastic.Controllers
         }
 
 
-        public ActionResult ViewCVContent(ApplicationUser user)
+        public ActionResult ViewCVContent(String UserId)
         {
             // Retrieve user's CV record from the database (replace with your logic)
             var existingCV = _dbContext.UserResumes
-                        .FirstOrDefault(r => r.UserId == user.Id);
+                        .FirstOrDefault(r => r.UserId == UserId);
             if (existingCV != null && !string.IsNullOrEmpty(existingCV.ResumeFilePath))
             {
                 // Pass the file path to the view
-                ViewBag.CVFilePath = existingCV.ResumeFilePath;
+                ViewBag.CVPath = existingCV.ResumeFilePath;
 
                 return View();
             }

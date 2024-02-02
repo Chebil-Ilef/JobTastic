@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "pdRh12iyDC7M8Xz6Hb4f6ldrvMczTu+L3U0cCUmOBoI=",
+  "Hash": "0YHw0J9B9vPBsxqf8fc32WYaWh+Bk4At/IXi2GOt41E=",
   "Source": "JobTastic",
   "BasePath": "_content/JobTastic",
   "Mode": "Default",
@@ -5661,12 +5661,12 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\Uploads\\Screenshot (49).png",
+      "Identity": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\Uploads\\SheetRandomCouple.pdf",
       "SourceId": "JobTastic",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\",
       "BasePath": "_content/JobTastic",
-      "RelativePath": "Uploads/Screenshot (49).png",
+      "RelativePath": "Uploads/SheetRandomCouple.pdf",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -5675,24 +5675,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Uploads\\Screenshot (49).png"
-    },
-    {
-      "Identity": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\Uploads\\Screenshot (5).png",
-      "SourceId": "JobTastic",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\",
-      "BasePath": "_content/JobTastic",
-      "RelativePath": "Uploads/Screenshot (5).png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Uploads\\Screenshot (5).png"
+      "OriginalItemSpec": "wwwroot\\Uploads\\SheetRandomCouple.pdf"
     },
     {
       "Identity": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\vendors\\chart.js\\Chart.min.js",

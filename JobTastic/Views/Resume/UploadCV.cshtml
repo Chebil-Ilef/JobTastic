@@ -1,4 +1,10 @@
-﻿@{
+﻿@using Microsoft.AspNetCore.Identity
+@using JobTastic.Areas.Identity.Data
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@{
     ViewBag.Title = "Upload CV";
 }
 
@@ -6,7 +12,7 @@
 <br />
 <br />
 
-<a asp-controller="Resume" asp-action="ViewCVContent" class="nav-link">Resume</a>
+<a href="@Url.Action("ViewCVContent", "Resume", new { UserId=UserManager.GetUserId(User) })">Link Text</a>
 <h2>Upload CV</h2>
 
 @using (Html.BeginForm("UploadCV", "Resume", FormMethod.Post, new { enctype = "multipart/form-data" }))
