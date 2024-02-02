@@ -40,5 +40,8 @@ namespace JobTastic.Models.JobOfferViewModels
         public IEnumerable<JobCategory>? JobCategories { get; set; }
 
         public IEnumerable<JobType>? JobTypes { get; set; }
+
+        public bool IsPending { get; set; }
+
     }
 }

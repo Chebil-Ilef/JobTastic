@@ -120,12 +120,8 @@ namespace JobTastic.Services
             var user = await _applicationUserRepo.GetById(userId);
             var offer = await _jobOfferRepo.GetById(offerId);
 
-           
-            
 
-            return offer.author.Id == user.Id
-                   || await IsInRole(user, RoleHelper.Admin)
-                   || await IsInRole(user, RoleHelper.Recruiter);
+            return offer.author.Id == user.Id;
         }
 
         public async Task<bool> IncreaseOfferViews(JobOffer offer)

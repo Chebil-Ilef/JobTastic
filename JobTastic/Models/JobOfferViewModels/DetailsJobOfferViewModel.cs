@@ -29,5 +29,6 @@ namespace JobTastic.Models.JobOfferViewModels
         public string Location { get; set; }
 
         public Decimal Salary { get; set; }
+        public bool IsPending { get; set; }
     }
 }

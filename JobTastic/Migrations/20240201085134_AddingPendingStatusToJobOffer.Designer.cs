@@ -4,6 +4,7 @@ using JobTastic.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JobTastic.Migrations
 {
     [DbContext(typeof(AuthDbContext))]
-    partial class AuthDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240201085134_AddingPendingStatusToJobOffer")]
+    partial class AddingPendingStatusToJobOffer
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -199,30 +201,6 @@ namespace JobTastic.Migrations
                     b.ToTable("JobTypes");
                 });
 
-            modelBuilder.Entity("JobTastic.Models.ResumeModels.UserResume", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("ResumeFilePath")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId")
-                        .IsUnique();
-
-                    b.ToTable("UserResumes");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
@@ -387,17 +365,6 @@ namespace JobTastic.Migrations
                     b.Navigation("jobcategory");
                 });
 
-            modelBuilder.Entity("JobTastic.Models.ResumeModels.UserResume", b =>
-                {
-                    b.HasOne("JobTastic.Areas.Identity.Data.ApplicationUser", "User")
-                        .WithOne("Resume")
-                        .HasForeignKey("JobTastic.Models.ResumeModels.UserResume", "UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -446,12 +413,6 @@ namespace JobTastic.Migrations
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("JobTastic.Areas.Identity.Data.ApplicationUser", b =>
-                {
-                    b.Navigation("Resume")
                         .IsRequired();
                 });
 
