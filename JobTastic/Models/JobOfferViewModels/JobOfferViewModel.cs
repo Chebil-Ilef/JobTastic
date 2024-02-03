@@ -24,6 +24,9 @@ namespace JobTastic.Models.JobOfferViewModels
         public string Title { get; set; }
 
         public string Description { get; set; }
+        public string Location { get; set; }
+
+        public Decimal Salary { get; set; }
 
         public int Visits { get; set; }
 

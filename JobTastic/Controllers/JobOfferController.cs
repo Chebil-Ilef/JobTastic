@@ -48,12 +48,29 @@ namespace JobTastic.Controllers
 
         // GET: JobOffer
         [AllowAnonymous]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(String sortOrder)
         {
             var jobOffers = await _jobOfferService.GetAllOffers();
             var vms = _mapper.Map<IList<JobOfferViewModel>>(jobOffers);
             ViewData["JobOfferCount"] = vms.Count;
+            ViewBag.SalarySortParm = String.IsNullOrEmpty(sortOrder) ? "salary_desc" : "";
+            ViewBag.DateSortParm = sortOrder=="Date" ? "date_desc" : "date";
 
+            switch (sortOrder)
+            {
+                case "salary_desc":
+                    vms = vms.OrderByDescending(o => o.Salary).ToList();
+                    break;
+                case  "date_desc":
+                    vms = vms.OrderByDescending(o => o.Submitted).ToList();
+                    break;
+                case "date":
+                    vms = vms.OrderBy(o => o.Submitted).ToList();
+                    break;
+                default:
+                    vms = vms.OrderBy(o => o.Salary).ToList();
+                    break;
+            }
             if (!await _authService.IsSignedIn(HttpContext.User))
             {
                 return View(vms);
@@ -64,6 +81,7 @@ namespace JobTastic.Controllers
             {
                 offer.CanEdit = await _jobOfferService.CanUserEditOffer(user.Id, offer.JobOfferId);
             }
+         
 
             return View(vms);
         }
