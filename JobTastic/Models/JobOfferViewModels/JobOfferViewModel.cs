@@ -31,5 +31,10 @@ namespace JobTastic.Models.JobOfferViewModels
         public int Visits { get; set; }
 
         public bool CanEdit { get; set; }
+        public string Location { get; set; }
+
+        public Decimal Salary { get; set; }
+        public bool IsPending { get; set; }
+
     }
 }

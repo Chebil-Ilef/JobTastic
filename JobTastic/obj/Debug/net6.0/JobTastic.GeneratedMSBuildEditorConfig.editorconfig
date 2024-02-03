@@ -116,6 +116,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm9iQ2F0ZWdvcnlcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/GL3/Framework ASP.net/Project/JobTastic/Views/JobOffer/AdminIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm9iT2ZmZXJcQWRtaW5JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GL3/Framework ASP.net/Project/JobTastic/Views/JobOffer/AdminPendingJobs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm9iT2ZmZXJcQWRtaW5QZW5kaW5nSm9icy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/GL3/Framework ASP.net/Project/JobTastic/Views/JobOffer/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm9iT2ZmZXJcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

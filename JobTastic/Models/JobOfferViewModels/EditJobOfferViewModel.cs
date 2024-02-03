@@ -25,7 +25,15 @@ namespace JobTastic.Models.JobOfferViewModels
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 10)]
         [Display(Name = "Description")]
         public string Description { get; set; }
-        
+
+        [Required]
+        [Display(Name = "Salary")]
+        public Decimal Salary { get; set; }
+
+        [Required]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 2)]
+        [Display(Name = "Location")]
+        public string Location { get; set; }
         public IEnumerable<JobCategory>? JobCategories { get; set; }
 
         public IEnumerable<JobType>? JobTypes { get; set; }

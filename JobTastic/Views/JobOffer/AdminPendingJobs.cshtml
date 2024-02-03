@@ -1,7 +1,9 @@
-﻿@model JobTastic.Models.JobCategoryViewModels.DetailsJobCategoryViewModel
+﻿@using JobTastic.Services.IServices;
+@model IEnumerable<JobTastic.Models.JobOfferViewModels.JobOfferViewModel>
+@inject IAuthService AuthService
 
 @{
-    ViewData["Title"] = "Details - Job Category";
+    ViewData["Title"] = "Job offers";
 }
 <head>
 
@@ -68,7 +70,7 @@
                         <div class="collapse" id="ui-basic">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item"> <a class="nav-link" href="/JobOffer/AdminIndex"> Job Offers </a></li>
-                                <li class="nav-item"> <a class="nav-link" href="/"> Pending Job Offers </a></li>
+                                <li class="nav-item"> <a class="nav-link" href="/JobOffer/AdminPendingJobs"> Pending Job Offers </a></li>
                                 <li class="nav-item"> <a class="nav-link" href="/JobType"> Job Types </a></li>
                                 <li class="nav-item"> <a class="nav-link" href="/JobCategory"> Job Category </a></li>
                             </ul>
@@ -99,35 +101,84 @@
 
             <div class="main-panel">
                 <div class="content-wrapper">
-                    <h3>@ViewData["Title"]</h3>
-                    <hr />
-                    <div class="container mt-4">
-                        <h1 class="display-4">JobCategory Details</h1>
+                    <main class="main" id="top">
+                        <section class="py-0" id="home">
 
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">JobCategory Information</h4>
-                                <hr />
-                                <dl class="row">
-                                    <dt
-                                        class="col-sm-2">JobCategory Name
-                                    </dt>
-                                    <dd
-                                        class="col-sm-10">@Html.DisplayFor(model => model.Name)
-                                    </dd>
-                                </dl>
+                            <div class="container">
+                                <div class="row align-items-center min-vh-75 min-vh-md-100">
+                                    <div class="col-md-7 col-lg-6 py-6 text-sm-start text-center">
+                                        <h1>@ViewData["Title"]</h1>
+                                    </div>
+
+                                    <div class="job-listing-area pt-120 pb-120">
+                                        <div class="container">
+                                            <div class="row">
+                                                <!-- Count of Job list Start -->
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="count-job mb-35">
+                                                            <span>@Model.Count() offers Pending </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Count of Job list End -->
+                                                <!-- Right content -->
+                                                <!-- Featured_job_start -->
+                                                <section class="featured-job-area">
+                                                    <div class="container">
+                                                        <!-- single-job-content -->
+                                                        @foreach (var item in Model)
+                                                        {
+                                                            <div class="single-job-items mb-30">
+                                                                <div class="job-items">
+                                                                    <div class="job-tittle job-tittle2">
+                                                                        <h4>@Html.DisplayFor(modelItem => item.Title)</h4>
+                                                                        <ul>
+                                                                            <li>Author: @Html.DisplayFor(modelItem => item.Author.Email)</li>
+                                                                            <li>Category: @Html.DisplayFor(modelItem => item.JobCategory.Name)</li>
+                                                                            <li>Location: @Html.DisplayFor(modelItem => item.Location)</li>
+                                                                            <li>DateSubmitted:  @Html.DisplayFor(modelItem => item.Submitted)</li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="items-link items-link2 f-right">
+                                                                    <!-- Accept Job Offer Form -->
+                                                                    <span>
+                                                                        <form action="/JobOffer/AcceptJobOffer/@item.JobOfferId" method="post" onsubmit="return confirm('Are you sure you want to Accept this post?')" ;>
+                                                                            <button type="submit" class="btn btn-success btn-sm">Accept</button>
+                                                                        </form>
+                                                                    </span>
+                                                                    <span>
+                                                                        <!-- Decline and Delete Job Offer Form -->
+                                                                        <form action="/JobOffer/DeclineAndDeleteJobOffer/@item.JobOfferId" method="post" onsubmit="return confirm('Are you sure you want to Decline this post?')" ;>
+                                                                                <button type="submit" class="btn btn-danger btn-sm">Decline and Delete</button>
+                                                                        </form>
+                                                                    </span>
+                                                                </div>
+
+                                                            </div>
+                                                        }
+                                                    </div>
+                                                </section>
+                                                <!-- Featured_job_end -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Job List Area End -->
+                                </div>
+
                             </div>
-                        </div>
-                    </div>
-                    <div class="container mt-4">
-                        <div class="d-flex justify-content-between">
-                        <a asp-action="Edit" asp-route-id="@Model.JobCategoryId" class="btn btn-primary btn-sm">Edit</a>
-                        <a asp-action="Index" class="btn btn-default btn-sm">Back to list</a>
-                        </div>
-                    </div>
+
+
+                        </section>
+                    </main>
                 </div>
-                <!-- page-body-wrapper ends -->
             </div>
+            <!-- main-panel ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+    </div>
     <!-- container-scroller -->
     <!-- container-scroller -->
     <!-- plugins:js -->
