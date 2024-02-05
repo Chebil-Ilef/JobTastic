@@ -1,0 +1,28 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using JobTastic.Areas.Identity.Data
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@{
+    ViewBag.Title = "Upload CV";
+}
+
+<br />
+<br />
+<br />
+
+
+<h2>Upload CV</h2>
+
+@using (Html.BeginForm("UploadCV", "Resume", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="form-group">
+        <label for="file">Select CV file:</label>
+        <input type="file" name="file" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Upload</button>
+}
+
+<!-- Add other HTML elements or styling based on your design requirements -->

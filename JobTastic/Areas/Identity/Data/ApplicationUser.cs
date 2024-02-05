@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
+using JobTastic.Models.ResumeModels;
 using Microsoft.AspNetCore.Identity;
 
 namespace JobTastic.Areas.Identity.Data;
@@ -20,5 +21,6 @@ public class ApplicationUser : IdentityUser
 
     public string SelectedRole { get; set; }
 
+    public virtual UserResume Resume { get; set; }
 }
 

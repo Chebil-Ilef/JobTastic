@@ -1,0 +1,40 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using JobTastic.Areas.Identity.Data
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+ 
+}
+
+<head>
+    <link href="~/css/theme.css" rel="stylesheet" />
+</head>
+    <main class="main" id="top">
+
+        <section class="py-0" id="home">
+            <div class="bg-holder d-none d-sm-block" style="background-image:url(/img/illustrations/cv.png);background-position:right top;background-size:contain;">
+            </div>
+            <!--/.bg-holder-->
+
+
+            <div class="container">
+                <div class="row align-items-center min-vh-75 min-vh-md-100">
+                    <div class="col-md-7 col-lg-6 py-6 text-sm-start text-center">
+                    <div>
+                        <a href="@Url.Action("ViewCVContent", "Resume", new { UserId=UserManager.GetUserId(User) })">View your Resume</a>
+                        <br />
+                        <a asp-action="UploadCV">Upload new Resume</a>
+                        <br />
+                        <a href="@Url.Action("DownloadCV", "Resume", new { UserId=UserManager.GetUserId(User) })">Download your Resume</a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    

@@ -1,9 +1,11 @@
 ﻿using JobTastic.Areas.Identity.Data;
 using JobTastic.Models;
+using JobTastic.Models.ResumeModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection.Emit;
+
 
 namespace JobTastic.Data;
 
@@ -27,5 +29,5 @@ public class AuthDbContext : IdentityDbContext<ApplicationUser>
     public  DbSet<JobOffer> JobOffers { get; set; }
     public  DbSet<ApplicationUser> ApplicationUsers { get; set; }
     public DbSet<AdminDashboardViewModel> AdminDashboardViewModel { get; set; }
-
+    public DbSet<UserResume> UserResumes { get; set; }
 }
