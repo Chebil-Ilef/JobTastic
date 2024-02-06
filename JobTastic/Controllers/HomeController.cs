@@ -30,7 +30,9 @@ namespace JobTastic.Controllers
                 NumberOfJobSearchers = _dbContext.Users.Count(u => u.SelectedRole == "JobSearcher"),
                 Offers = GetTopOffers(),
                 UsersList = GetUsersList(),
-                ChartData = GetChartData()
+                ChartData = GetChartData(),
+                BarData =GetBarData()
+
 
 
             };
@@ -103,6 +105,29 @@ namespace JobTastic.Controllers
 
         
             return ChartData;
+        }
+
+        public BarData GetBarData()
+        {
+            Dictionary<string, string> typesIds = new Dictionary<string, string>
+    {
+        { "part time", "1" },
+        { "full time", "2" },
+        { "remote", "3" }
+        
+    };
+
+            BarData BarData = new BarData();
+
+            foreach (var type in typesIds)
+            {
+                int typeCount = _dbContext.JobOffers.Count(j => j.JobTypeId == type.Value);
+                BarData.Labs.Add(type.Key);
+                BarData.Data.Add(typeCount);
+            }
+
+
+            return BarData;
         }
 
 
