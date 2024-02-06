@@ -11781,19 +11781,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\olfam\\.nuget\\packages\\": {}
+    "C:\\Users\\DELL\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\JobTastic.csproj",
+      "projectUniqueName": "D:\\GL3\\Framework ASP.net\\Project\\JobTastic\\JobTastic.csproj",
       "projectName": "JobTastic",
-      "projectPath": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\JobTastic.csproj",
-      "packagesPath": "C:\\Users\\olfam\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\obj\\",
+      "projectPath": "D:\\GL3\\Framework ASP.net\\Project\\JobTastic\\JobTastic.csproj",
+      "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+      "outputPath": "D:\\GL3\\Framework ASP.net\\Project\\JobTastic\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\olfam\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -11801,6 +11806,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
-using AutoMapper;
+using BulletinBoard.Infrastructure.AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using JobTastic.Models;
 using JobTastic.Models.JobOfferViewModels;
@@ -9,6 +9,8 @@ using JobTastic.Services.IServices;
 using Microsoft.AspNetCore.Authorization;
 using JobTastic.Models.JobTypeViewModels;
 using JobTastic.Helpers;
+using AutoMapper;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace JobTastic.Controllers
 {
@@ -56,7 +58,7 @@ namespace JobTastic.Controllers
             var vms = _mapper.Map<IList<JobOfferViewModel>>(nonPendingJobOffers);
             ViewData["JobOfferCount"] = vms.Count;
             ViewBag.SalarySortParm = String.IsNullOrEmpty(sortOrder) ? "salary_desc" : "";
-            ViewBag.DateSortParm = sortOrder=="Date" ? "date_desc" : "date";
+            ViewBag.DateSortParm = sortOrder=="Date" ? "date_desc" : "Date";
 
             switch (sortOrder)
             {
@@ -83,8 +85,7 @@ namespace JobTastic.Controllers
             {
                 offer.CanEdit = await _jobOfferService.CanUserEditOffer(user.Id, offer.JobOfferId);
             }
-         
-
+            
             return View(vms);
         }
         [Authorize(Roles = RoleHelper.Admin)]
@@ -165,6 +166,7 @@ namespace JobTastic.Controllers
 
 /***********************************************************************/
 
+       /* 
         [AllowAnonymous]
         public async Task<IActionResult> Search(string phrase)
         {
@@ -189,7 +191,7 @@ namespace JobTastic.Controllers
                 offer.CanEdit = await _jobOfferService.CanUserEditOffer(user.Id, offer.JobOfferId);
             }
             return View("Index", vms);
-        }
+        }*/
 
         // GET: JobOffer/Popular
         [AllowAnonymous]
