@@ -69,24 +69,25 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="ManageUsers">
-                            <i class="icon-grid menu-icon"></i>
-                            <span class="menu-title">Manage Users</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
                             <i class="icon-grid-2 menu-icon"></i>
-                            <span class="menu-title">Admin Users</span>
+                            <span class="menu-title">Manage Users</span>
                             <i class="menu-arrow"></i>
                         </a>
                         <div class="collapse" id="tables">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="ManageAdmin">Admins</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="ManageAdmin">Add Admin</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="ManageAdmin">Remove Admin</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="/ManageUsers/">Users</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="/ManageUsers/Create">Add User</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="/ManageUsers/Edit">Edit User</a></li>
+
                             </ul>
                         </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ManageAdmin">
+                            <i class="icon-grid menu-icon"></i>
+                            <span class="menu-title"> Admin Users</span>
+                        </a>
                     </li>
                 </ul>
             </nav>
