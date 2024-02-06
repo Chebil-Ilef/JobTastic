@@ -11,6 +11,7 @@ using JobTastic.Models.JobTypeViewModels;
 using JobTastic.Helpers;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Data;
 
 namespace JobTastic.Controllers
 {
@@ -51,15 +52,25 @@ namespace JobTastic.Controllers
 
         // GET: JobOffer
         [AllowAnonymous]
-        public async Task<IActionResult> Index(String sortOrder)
-        {
+        public async Task<IActionResult> Index(string sortOrder)
+        {     //retrieving job offers 
             var jobOffers = await _jobOfferService.GetAllOffers();
+            //retrieving non pending  job offers
             var nonPendingJobOffers = jobOffers.Where(offer => !offer.IsPending).ToList();
             var vms = _mapper.Map<IList<JobOfferViewModel>>(nonPendingJobOffers);
+            //counting job offers 
             ViewData["JobOfferCount"] = vms.Count;
-            ViewBag.SalarySortParm = String.IsNullOrEmpty(sortOrder) ? "salary_desc" : "";
-            ViewBag.DateSortParm = sortOrder=="Date" ? "date_desc" : "Date";
+            // Retrieve job types and categories
+            var jobTypes = await _jobTypeService.GetAllTypes();
+            var jobCategories = await _jobCategoryService.GetAllCategories();
 
+            // Create SelectList for job types and job categories
+            ViewBag.JobTypes = new SelectList(jobTypes, "Name", "Name");
+            ViewBag.JobCategories = new SelectList(jobCategories, "Name", "Name");
+            //sorting logic (by salary and submission date)
+            ViewBag.SalarySortParm = string.IsNullOrEmpty(sortOrder) ? "salary_desc" : "";
+            ViewBag.DateSortParm = sortOrder=="Date" ? "date_desc" : "Date";
+           
             switch (sortOrder)
             {
                 case "salary_desc":
@@ -75,17 +86,15 @@ namespace JobTastic.Controllers
                     vms = vms.OrderBy(o => o.Salary).ToList();
                     break;
             }
-            if (!await _authService.IsSignedIn(HttpContext.User))
-            {
-                return View(vms);
-            }
+          
 
             var user = await _authService.GetSignedUser(User);
             foreach (var offer in vms)
             {
                 offer.CanEdit = await _jobOfferService.CanUserEditOffer(user.Id, offer.JobOfferId);
             }
-            
+        
+
             return View(vms);
         }
         [Authorize(Roles = RoleHelper.Admin)]
@@ -164,34 +173,43 @@ namespace JobTastic.Controllers
                     return NotFound();
         }
 
-/***********************************************************************/
+        /***********************************************************************/
 
-       /* 
+        [Route("JobOffer/Search")]
         [AllowAnonymous]
-        public async Task<IActionResult> Search(string phrase)
+        public async Task<IActionResult> Search(string jobType, string jobCategory)
         {
-            if (string.IsNullOrEmpty(phrase))
-            {
-                return RedirectToAction(nameof(Index));
-            }
+            // Retrieve all job offers
+            var jobOffers = await _jobOfferService.GetAllOffers();
 
-            var matchingOffers = await _jobOfferService.GetOffersContainingPhrase(phrase);
-            var vms = _mapper.Map<IList<JobOfferViewModel>>(matchingOffers);
+            // Retrieve non-pending job offers
+            var nonPendingJobOffers = jobOffers.Where(offer => !offer.IsPending).ToList();
+
+            // Map to view models
+            var vms = _mapper.Map<IList<JobOfferViewModel>>(nonPendingJobOffers);
+
+            // Count job offers
             ViewData["JobOfferCount"] = vms.Count;
-            ViewData["phrase"] = phrase;
 
-            if (!await _authService.IsSignedIn(HttpContext.User))
+          
+
+            // Filtering logic based on job type and job category
+            if (!string.IsNullOrEmpty(jobType))
             {
-                return View("Index", vms);
+                jobType = jobType.Trim(); // Trim whitespace
+                vms = vms.Where(o => string.Equals(o.JobType.Name, jobType, StringComparison.OrdinalIgnoreCase)).ToList();
             }
 
-            var user = await _authService.GetSignedUser(User);
-            foreach (var offer in vms)
+            if (!string.IsNullOrEmpty(jobCategory))
             {
-                offer.CanEdit = await _jobOfferService.CanUserEditOffer(user.Id, offer.JobOfferId);
+                jobCategory = jobCategory.Trim(); // Trim whitespace
+                vms = vms.Where(o => string.Equals(o.JobCategory.Name, jobCategory, StringComparison.OrdinalIgnoreCase)).ToList();
             }
+
+            // Return the filtered job offers
             return View("Index", vms);
-        }*/
+        }
+
 
         // GET: JobOffer/Popular
         [AllowAnonymous]

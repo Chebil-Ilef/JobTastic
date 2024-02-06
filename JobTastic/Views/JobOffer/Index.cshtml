@@ -1,4 +1,8 @@
-﻿@using JobTastic.Services.IServices;
+﻿
+@using JobTastic.Services.IServices;
+@using Org.BouncyCastle.Asn1.Ocsp;
+
+
 @model IEnumerable<JobTastic.Models.JobOfferViewModels.JobOfferViewModel>
 @inject IAuthService AuthService
 
@@ -37,13 +41,26 @@
                             {
                                 <a asp-action="Create" class="btn btn-success btn-sm">Create</a>
                             }
-                            <input name="phrase" class="form-control input-sm" placeholder="@ViewData["phrase"]" autofocus />
-                            <input type="submit" value="Search" class="btn btn-default btn-sm" />
-                        </form>
+                           <!--<input name="phrase" class="form-control input-sm" placeholder="@ViewData["phrase"]" autofocus />
+                        <input type="submit" value="Search" class="btn btn-default btn-sm" />-->
+                    </form>
                     </div>
                 </div>
+                @using (Html.BeginForm("Index", "JobOffer", FormMethod.Get))
+                {
 
-                 
+
+                <label>Type:</label>
+                    @Html.DropDownList("jobType", (SelectList)ViewBag.JobTypes, "Select Type", new { @class = "dropdown-list" })
+
+                <label>Category:</label>
+                    @Html.DropDownList("jobCategorie", (SelectList)ViewBag.JobCategories, "Select Category", new { @class = "dropdown-list" })
+
+                
+
+                <input type="submit" value="Search" />
+                }
+                
                                     <table class="table">
                                         <tr>
                                             <th>
