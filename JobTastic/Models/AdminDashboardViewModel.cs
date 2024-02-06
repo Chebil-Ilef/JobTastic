@@ -15,6 +15,9 @@ namespace JobTastic.Models
 
         [NotMapped]
         public ChartData ChartData { get; set; }
+
+        [NotMapped]
+        public BarData BarData { get; set; }
     }
 
 
@@ -45,6 +48,18 @@ namespace JobTastic.Models
 
         public List<string> Labels { get; set; }
         public List<int> Values { get; set; }
+    }
+
+    public class BarData
+    {
+        public BarData()
+        {
+            Labs = new List<string>();
+            Data = new List<int>();
+        }
+
+        public List<string> Labs { get; set; }
+        public List<int> Data { get; set; }
     }
 }
 

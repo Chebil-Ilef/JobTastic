@@ -813,20 +813,8 @@
       "PackagePath": "staticwebassets\\img\\sprites\\yellow.png"
     },
     {
-      "Id": "C:\\Users\\msi\\OneDrive\\Bureau\\last\\JobTastic\\wwwroot\\js\\Chart.roundedBarCharts.js",
-      "PackagePath": "staticwebassets\\js\\Chart.roundedBarCharts.js"
-    },
-    {
       "Id": "C:\\Users\\msi\\OneDrive\\Bureau\\last\\JobTastic\\wwwroot\\js\\boostrap-navbar.js",
       "PackagePath": "staticwebassets\\js\\boostrap-navbar.js"
-    },
-    {
-      "Id": "C:\\Users\\msi\\OneDrive\\Bureau\\last\\JobTastic\\wwwroot\\js\\dashboard.js",
-      "PackagePath": "staticwebassets\\js\\dashboard.js"
-    },
-    {
-      "Id": "C:\\Users\\msi\\OneDrive\\Bureau\\last\\JobTastic\\wwwroot\\js\\data.txt",
-      "PackagePath": "staticwebassets\\js\\data.txt"
     },
     {
       "Id": "C:\\Users\\msi\\OneDrive\\Bureau\\last\\JobTastic\\wwwroot\\js\\dataTables.select.min.js",
@@ -859,10 +847,6 @@
     {
       "Id": "C:\\Users\\msi\\OneDrive\\Bureau\\last\\JobTastic\\wwwroot\\js\\theme.js.map",
       "PackagePath": "staticwebassets\\js\\theme.js.map"
-    },
-    {
-      "Id": "C:\\Users\\msi\\OneDrive\\Bureau\\last\\JobTastic\\wwwroot\\js\\todolist.js",
-      "PackagePath": "staticwebassets\\js\\todolist.js"
     },
     {
       "Id": "C:\\Users\\msi\\OneDrive\\Bureau\\last\\JobTastic\\wwwroot\\lib\\bootstrap\\LICENSE",
