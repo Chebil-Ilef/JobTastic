@@ -172,6 +172,22 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm9iVHlwZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/GL3/Framework ASP.net/Project/JobTastic/Views/Resume/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzdW1lXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GL3/Framework ASP.net/Project/JobTastic/Views/Resume/UploadCV.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzdW1lXFVwbG9hZENWLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GL3/Framework ASP.net/Project/JobTastic/Views/Resume/ViewCV.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzdW1lXFZpZXdDVi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GL3/Framework ASP.net/Project/JobTastic/Views/Resume/ViewCVContent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzdW1lXFZpZXdDVkNvbnRlbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/GL3/Framework ASP.net/Project/JobTastic/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
