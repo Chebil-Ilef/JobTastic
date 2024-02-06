@@ -1,4 +1,7 @@
 ﻿
+using System.ComponentModel.DataAnnotations.Schema;
+using static JobTastic.Controllers.HomeController;
+
 namespace JobTastic.Models
 {
     public class AdminDashboardViewModel
@@ -10,7 +13,10 @@ namespace JobTastic.Models
         public List<Offer> Offers { get; set; }
         public List<UserInfo> UsersList { get; set; }
 
+        [NotMapped]
+        public ChartData ChartData { get; set; }
     }
+
 
     public class Offer
     {
@@ -29,4 +35,16 @@ namespace JobTastic.Models
         public string SelectedRole { get; set; }
     }
 
+    public class ChartData
+    {
+        public ChartData()
+        {
+            Labels = new List<string>();
+            Values = new List<int>();
+        }
+
+        public List<string> Labels { get; set; }
+        public List<int> Values { get; set; }
+    }
 }
+
