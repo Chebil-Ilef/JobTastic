@@ -1,4 +1,8 @@
-﻿@using JobTastic.Services.IServices;
+﻿
+@using JobTastic.Services.IServices;
+@using Org.BouncyCastle.Asn1.Ocsp;
+
+
 @model IEnumerable<JobTastic.Models.JobOfferViewModels.JobOfferViewModel>
 @inject IAuthService AuthService
 
@@ -28,7 +32,7 @@
     <section class="py-0" id="home">
         
         <div class="container">
-            <div class="row align-items-center min-vh-75 min-vh-md-100">
+            < class="row align-items-center min-vh-75 min-vh-md-100">
                 <div class="col-md-7 col-lg-6 py-6 text-sm-start text-center">
                     <h1>@ViewData["Title"]</h1>
                     <div class="pt-3">
@@ -37,59 +41,88 @@
                             {
                                 <a asp-action="Create" class="btn btn-success btn-sm">Create</a>
                             }
-                            <input name="phrase" class="form-control input-sm" placeholder="@ViewData["phrase"]" autofocus />
-                            <input type="submit" value="Search" class="btn btn-default btn-sm" />
-                        </form>
+                           <!--<input name="phrase" class="form-control input-sm" placeholder="@ViewData["phrase"]" autofocus />
+                        <input type="submit" value="Search" class="btn btn-default btn-sm" />-->
+                    </form>
                     </div>
                 </div>
+                @using (Html.BeginForm("Index", "JobOffer", FormMethod.Get))
+                {
 
-                <div class="job-listing-area pt-120 pb-120">
-                    <div class="container">
-                        <div class="row">
-                            <!-- Right content -->
-                                <!-- Featured_job_start -->
-                                <section class="featured-job-area">
-                                    <div class="container">
-                                        <!-- Count of Job list Start -->
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <div class="count-job mb-35">
-                                                    <span>@Model.Count() offers found</span>
-                                                </div>
-                                            </div>
-                                        </div>
+
+                <label>Type:</label>
+                    @Html.DropDownList("jobType", (SelectList)ViewBag.JobTypes, "Select Type", new { @class = "dropdown-list" })
+
+                <label>Category:</label>
+                    @Html.DropDownList("jobCategorie", (SelectList)ViewBag.JobCategories, "Select Category", new { @class = "dropdown-list" })
+
+                
+
+                <input type="submit" value="Search" />
+                }
+                
+                                    <table class="table">
+                                        <tr>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.Title)
+                                            </th>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.JobCategory)
+                                            </th>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.JobType)
+                                            </th>
+                                            <th>
+                            @Html.ActionLink("Salary", "Index", new { sortOrder = ViewBag.SalarySortParm })
+                                            </th>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.Location)
+                                            </th>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.Author)
+                                            </th>
+                                            <th>
+                            @Html.ActionLink("Submission Date ", "Index", new { sortOrder = ViewBag.DateSortParm })
+
+                                            </th>
+                                            <th></th>
+                                        </tr>
                                         <!-- Count of Job list End -->
                                         <!-- single-job-content -->
                                         @foreach (var item in Model)
                                         {
-                                            <div class="single-job-items mb-30">
-                                                <div class="job-items">
-                                                    <div class="job-tittle job-tittle2">
-                                                    <a asp-action="Details" asp-route-id="@item.JobOfferId" >
-                                                        <h4>@Html.DisplayFor(modelItem => item.Title)</h4>
-                                                        </a>
-                                                        <ul>
-                                                        <li>@Html.DisplayFor(modelItem => item.Author.Email)</li>
-                                                        <li>@Html.DisplayFor(modelItem => item.JobCategory.Name)</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="items-link items-link2 f-right">
-                                                <span class="btn btn-info btn-sm">@Html.DisplayFor(modelItem => item.JobType.Name)</span>
-                                                <span>@Html.DisplayFor(modelItem => item.Submitted)</span>
-                                                </div>
-                                            </div>
-                                        }  
-                                    </div>
-                                </section>
-                                <!-- Featured_job_end -->
-                        </div>
-                    </div>
-                </div>
-                <!-- Job List Area End -->             
-            </div>
+                                            <tr>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Title)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.JobCategory.Name)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.JobType.Name)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Salary)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Location)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Submitted)
+                                                </td>
+                                                <td>
+                                                   
+                                                    @Html.ActionLink("Details", "Details", new { id=item.JobOfferId }) 
+                                          
+                                                </td>
+                                            </tr>
+                                               
+                                                
+                                        }
+                                        </table>
+                      
   
-        </div>
+        
 
 
 </section>
