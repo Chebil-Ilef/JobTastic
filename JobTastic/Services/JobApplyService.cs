@@ -48,6 +48,10 @@ namespace JobTastic.Services
         {
             return await _jobApplyRepo.GetByJobOfferId(id);
         }
+        public async Task<IEnumerable<JobApply>> GetApplication(string userId,string JobId)
+        {
+            return await _jobApplyRepo.GetApplication(userId, JobId);
+        }
 
-    }
+}
 }

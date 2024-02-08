@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "z+DxwWA9aBWS8eZ6Hn9P0JPPV071RGi5/M6F2OOXbSdUeVYh724bcDO1XLlD0uXDvidCvEA5jVvNy5M3IPQfCA==",
+  "dgSpecHash": "YGg9Ik1uKfN5/OQ104w9GT+mdkqIP4q1cGu8povRlscRFM5Qx+YYofpGK7F/R/jz+9WR6XOuAMpN2p9QAigqSw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\JobTastic.csproj",
   "expectedPackageFiles": [
@@ -115,6 +115,7 @@
     "C:\\Users\\Asma\\.nuget\\packages\\microsoft.identitymodel.protocols\\6.8.0\\microsoft.identitymodel.protocols.6.8.0.nupkg.sha512",
     "C:\\Users\\Asma\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\6.8.0\\microsoft.identitymodel.protocols.openidconnect.6.8.0.nupkg.sha512",
     "C:\\Users\\Asma\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.8.0\\microsoft.identitymodel.tokens.6.8.0.nupkg.sha512",
+    "C:\\Users\\Asma\\.nuget\\packages\\microsoft.net.sdk.razor\\3.1.32\\microsoft.net.sdk.razor.3.1.32.nupkg.sha512",
     "C:\\Users\\Asma\\.nuget\\packages\\microsoft.net.stringtools\\17.3.2\\microsoft.net.stringtools.17.3.2.nupkg.sha512",
     "C:\\Users\\Asma\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Asma\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",

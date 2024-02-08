@@ -20,6 +20,8 @@ public class AuthDbContext : IdentityDbContext<ApplicationUser>
     {
         base.OnModelCreating(builder);
         builder.Entity<AdminDashboardViewModel>().HasNoKey();
+       
+
 
 
     }
