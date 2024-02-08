@@ -30,4 +30,5 @@ public class AuthDbContext : IdentityDbContext<ApplicationUser>
     public  DbSet<ApplicationUser> ApplicationUsers { get; set; }
     public DbSet<AdminDashboardViewModel> AdminDashboardViewModel { get; set; }
     public DbSet<UserResume> UserResumes { get; set; }
+    public DbSet<JobApply> JobApplies { get; set; }
 }

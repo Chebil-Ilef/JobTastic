@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "MbahauIFRGelrAIkXoFR95HZMNUMI2UcUOq5+c5XR04=",
+  "Hash": "nt1PPGOUmwuYLCt/6i0/pMQUOXHmHT/4YF96JqO5mqE=",
   "Source": "JobTastic",
   "BasePath": "_content/JobTastic",
   "Mode": "Default",
@@ -3449,6 +3449,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\illustrations\\consultancy.png"
+    },
+    {
+      "Identity": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\cv.png",
+      "SourceId": "JobTastic",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\",
+      "BasePath": "_content/JobTastic",
+      "RelativePath": "img/illustrations/cv.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\illustrations\\cv.png"
     },
     {
       "Identity": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\design.png",

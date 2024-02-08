@@ -41,7 +41,7 @@ namespace BulletinBoard.Infrastructure.AutoMapper
             CreateMap<DeleteJobTypeViewModel, JobType>();
             CreateMap<DetailsJobTypeViewModel, JobType>();
             CreateMap<EditJobTypeViewModel, JobType>();
-
+            CreateMap<JobOffer, JobOffer>();
             #endregion
 
             #region JobOffer

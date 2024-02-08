@@ -569,6 +569,10 @@
       "PackagePath": "staticwebassets\\img\\illustrations\\consultancy.png"
     },
     {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\cv.png",
+      "PackagePath": "staticwebassets\\img\\illustrations\\cv.png"
+    },
+    {
       "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\design.png",
       "PackagePath": "staticwebassets\\img\\illustrations\\design.png"
     },
