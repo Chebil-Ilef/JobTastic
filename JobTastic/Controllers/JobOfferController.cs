@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
-using AutoMapper;
+using BulletinBoard.Infrastructure.AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using JobTastic.Models;
 using JobTastic.Models.JobOfferViewModels;
@@ -9,6 +9,9 @@ using JobTastic.Services.IServices;
 using Microsoft.AspNetCore.Authorization;
 using JobTastic.Models.JobTypeViewModels;
 using JobTastic.Helpers;
+using AutoMapper;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Data;
 
 namespace JobTastic.Controllers
 {
@@ -19,6 +22,7 @@ namespace JobTastic.Controllers
         private readonly IJobCategoryService _jobCategoryService;
         private readonly IAuthService _authService;
         private readonly IJobTypeService _jobTypeService;
+        private readonly IJobApplyService _jobApplyService;
         private readonly IMapper _mapper;
 
         public JobOfferController(
@@ -26,12 +30,14 @@ namespace JobTastic.Controllers
             IJobCategoryService jobCategoryService,
             IJobTypeService jobTypeService,
             IAuthService authService,
+            IJobApplyService jobApplyService,
             IMapper mapper)
         {
             _jobOfferService = jobOfferService;
             _jobCategoryService = jobCategoryService;
             _jobTypeService = jobTypeService;
             _authService = authService;
+            _jobApplyService = jobApplyService; 
             _mapper = mapper;
         }
 
@@ -49,23 +55,48 @@ namespace JobTastic.Controllers
 
         // GET: JobOffer
         [AllowAnonymous]
-        public async Task<IActionResult> Index()
-        {
+        public async Task<IActionResult> Index(string sortOrder)
+        {     //retrieving job offers 
             var jobOffers = await _jobOfferService.GetAllOffers();
+            //retrieving non pending  job offers
             var nonPendingJobOffers = jobOffers.Where(offer => !offer.IsPending).ToList();
             var vms = _mapper.Map<IList<JobOfferViewModel>>(nonPendingJobOffers);
+            //counting job offers 
             ViewData["JobOfferCount"] = vms.Count;
+            // Retrieve job types and categories
+            var jobTypes = await _jobTypeService.GetAllTypes();
+            var jobCategories = await _jobCategoryService.GetAllCategories();
 
-            if (!await _authService.IsSignedIn(HttpContext.User))
+            // Create SelectList for job types and job categories
+            ViewBag.JobTypes = new SelectList(jobTypes, "Name", "Name");
+            ViewBag.JobCategories = new SelectList(jobCategories, "Name", "Name");
+            //sorting logic (by salary and submission date)
+            ViewBag.SalarySortParm = string.IsNullOrEmpty(sortOrder) ? "salary_desc" : "";
+            ViewBag.DateSortParm = sortOrder=="Date" ? "date_desc" : "Date";
+           
+            switch (sortOrder)
             {
-                return View(vms);
+                case "salary_desc":
+                    vms = vms.OrderByDescending(o => o.Salary).ToList();
+                    break;
+                case  "date_desc":
+                    vms = vms.OrderByDescending(o => o.Submitted).ToList();
+                    break;
+                case "date":
+                    vms = vms.OrderBy(o => o.Submitted).ToList();
+                    break;
+                default:
+                    vms = vms.OrderBy(o => o.Salary).ToList();
+                    break;
             }
+          
 
             var user = await _authService.GetSignedUser(User);
             foreach (var offer in vms)
             {
                 offer.CanEdit = await _jobOfferService.CanUserEditOffer(user.Id, offer.JobOfferId);
             }
+        
 
             return View(vms);
         }
@@ -145,33 +176,43 @@ namespace JobTastic.Controllers
                     return NotFound();
         }
 
-/***********************************************************************/
+        /***********************************************************************/
 
+        [Route("JobOffer/Search")]
         [AllowAnonymous]
-        public async Task<IActionResult> Search(string phrase)
+        public async Task<IActionResult> Search(string jobType, string jobCategory)
         {
-            if (string.IsNullOrEmpty(phrase))
-            {
-                return RedirectToAction(nameof(Index));
-            }
+            // Retrieve all job offers
+            var jobOffers = await _jobOfferService.GetAllOffers();
 
-            var matchingOffers = await _jobOfferService.GetOffersContainingPhrase(phrase);
-            var vms = _mapper.Map<IList<JobOfferViewModel>>(matchingOffers);
+            // Retrieve non-pending job offers
+            var nonPendingJobOffers = jobOffers.Where(offer => !offer.IsPending).ToList();
+
+            // Map to view models
+            var vms = _mapper.Map<IList<JobOfferViewModel>>(nonPendingJobOffers);
+
+            // Count job offers
             ViewData["JobOfferCount"] = vms.Count;
-            ViewData["phrase"] = phrase;
 
-            if (!await _authService.IsSignedIn(HttpContext.User))
+          
+
+            // Filtering logic based on job type and job category
+            if (!string.IsNullOrEmpty(jobType))
             {
-                return View("Index", vms);
+                jobType = jobType.Trim(); // Trim whitespace
+                vms = vms.Where(o => string.Equals(o.JobType.Name, jobType, StringComparison.OrdinalIgnoreCase)).ToList();
             }
 
-            var user = await _authService.GetSignedUser(User);
-            foreach (var offer in vms)
+            if (!string.IsNullOrEmpty(jobCategory))
             {
-                offer.CanEdit = await _jobOfferService.CanUserEditOffer(user.Id, offer.JobOfferId);
+                jobCategory = jobCategory.Trim(); // Trim whitespace
+                vms = vms.Where(o => string.Equals(o.JobCategory.Name, jobCategory, StringComparison.OrdinalIgnoreCase)).ToList();
             }
+
+            // Return the filtered job offers
             return View("Index", vms);
         }
+
 
         // GET: JobOffer/Popular
         [AllowAnonymous]
@@ -192,6 +233,7 @@ namespace JobTastic.Controllers
             }
 
             var jobOffer = await _jobOfferService.GetOfferById(id);
+            
             if (jobOffer == null)
             {
                 return View("NotFound");
@@ -204,7 +246,11 @@ namespace JobTastic.Controllers
             {
                 return View(vm);
             }
-
+            var applyButton = await _jobApplyService.GetByJobOfferId(jobOffer.jobOfferId);
+            if (applyButton == null)
+            {
+                ViewBag.ApplyButton = true;
+            }
             var user = await _authService.GetSignedUser(User);
             vm.CanEdit = await _jobOfferService.CanUserEditOffer(user.Id, vm.JobOfferId);
             return View(vm);

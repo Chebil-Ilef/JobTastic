@@ -4,56 +4,113 @@
     ViewData["Title"] = "Edit - Job Offer";
 }
 
-<h3>@ViewData["Title"]</h3>
-<hr/>
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="All" class="text-danger"></div>
-            <input type="hidden" asp-for="JobOfferId"/>
-            <div class="form-group">
-                <label asp-for="JobCategoryId" class="control-label"></label>
-                <select class="form-control" asp-for="JobCategoryId"
-                        asp-items="@(new SelectList(@Model.JobCategories, "JobCategoryId", "Name", @Model.JobCategoryId))">
-                </select>
-                <p asp-display-for="JobCategoryId" />
-                <span asp-validation-for="JobCategoryId" class="text-danger"></span>
+<style>
+    body {
+        height: 140vh; /* Ensure full viewport height */
+        margin: 0; /* Remove default body margin */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .mainn
+
+    {
+        background-image: url('/img/background99.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    }
+</style>
+<div class="container">
+
+    <div class=" text-center mt-5 ">
+        <h3>@ViewData["Title"]</h3>
+        <hr>
+    </div>
+    <div class="row">
+        <div class="col-lg-7 mx-auto">
+            <div class="mainn">
+                <div class="card mt-2 mx-auto p-4 bg-light">
+                    <div class="card-body bg-light">
+                        <div class="container">
+                            <form asp-action="Edit">
+                                <div class="controls">
+                                    <div asp-validation-summary="All" class="text-danger"></div>
+                                    <input type="hidden" asp-for="JobOfferId"/>
+
+                                    <div class="form-group">
+                                        <label asp-for="Title" class="control-label"></label>
+                                        <input asp-for="Title" class="form-control" />
+                                        <span asp-validation-for="Title" class="text-danger"></span>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label asp-for="JobCategoryId" class="control-label"></label>
+                                                <select class="form-control" asp-for="JobCategoryId"
+                                                        asp-items="@(new SelectList(@Model.JobCategories, "JobCategoryId", "Name", @Model.JobCategoryId))">
+                                                </select>
+                                                <p asp-display-for="JobCategoryId" />
+                                                <span asp-validation-for="JobCategoryId" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label asp-for="JobTypeId" class="control-label"></label>
+                                                <select class="form-control" asp-for="JobTypeId"
+                                                        asp-items="@(new SelectList(@Model.JobTypes, "JobTypeId", "Name", @Model.JobTypeId))">
+                                                </select>
+                                                <span asp-validation-for="JobTypeId" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label asp-for="Salary" class="control-label"></label>
+                                                <input asp-for="Salary" class="form-control" />
+                                                <span asp-validation-for="Salary" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label asp-for="Location" class="control-label"></label>
+                                                <input asp-for="Location" class="form-control" />
+                                                <span asp-validation-for="Location" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label asp-for="Description" class="control-label"></label>
+                                            <input asp-for="Description" class="form-control" />
+                                            <span asp-validation-for="Description" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <p></p>
+                                        <div class="form-group">
+                                            <input type="submit" value="Save" class="btn btn-success btn-sm"/>
+                                            <a asp-action="Index" class="btn btn-default btn-sm">Back to list</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="JobTypeId" class="control-label"></label>
-                <select class="form-control" asp-for="JobTypeId"
-                        asp-items="@(new SelectList(@Model.JobTypes, "JobTypeId", "Name", @Model.JobTypeId))">
-                </select>
-                <span asp-validation-for="JobTypeId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Title" class="control-label"></label>
-                <input asp-for="Title" class="form-control"/>
-                <span asp-validation-for="Title" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control"/>
-                <span asp-validation-for="Description" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Salary" class="control-label"></label>
-                <input asp-for="Salary" class="form-control" />
-                <span asp-validation-for="Salary" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Location" class="control-label"></label>
-                <input asp-for="Location" class="form-control" />
-                <span asp-validation-for="Location" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-success btn-sm"/>
-                <a asp-action="Index" class="btn btn-default btn-sm">Back to list</a>
-            </div>
-        </form>
+        </div>
     </div>
 </div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
