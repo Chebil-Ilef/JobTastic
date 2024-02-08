@@ -1,0 +1,30 @@
+﻿
+
+/*** Job Listing ***/
+.nav-pills .nav-item .active {
+    border-bottom: 2px solid var(--primary);
+}
+
+.job-item {
+    border: 1px solid transparent;
+    border-radius: 2px;
+    box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+    transition: .5s;
+}
+
+    .job-item:hover {
+        border-color: rgba(0, 0, 0, .08);
+        box-shadow: none;
+    }
+
+body {
+    height: 120vh; /* Ensure full viewport height */
+    margin: 0; /* Remove default body margin */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.d-flex.justify-content-center {
+    justify-content: center;
+    align-items: center; /* Optional: If you want to center vertically */
+}
