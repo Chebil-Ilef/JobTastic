@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "SlY9p3wPO2Wfumf5/iIRjhNVvzGTK1PBleq8s9Kf3iw=",
+  "Hash": "+7xeB8Dbqyxkbf8pfOBSjDxdX2puizSwb8aqMgotW2Y=",
   "Source": "JobTastic",
   "BasePath": "_content/JobTastic",
   "Mode": "Default",
@@ -1122,6 +1122,23 @@
       "OriginalItemSpec": "wwwroot\\css\\contact.css"
     },
     {
+      "Identity": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\css\\DetailsCss.css",
+      "SourceId": "JobTastic",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\",
+      "BasePath": "_content/JobTastic",
+      "RelativePath": "css/DetailsCss.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\DetailsCss.css"
+    },
+    {
       "Identity": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\css\\site.css",
       "SourceId": "JobTastic",
       "SourceType": "Discovered",
@@ -1341,6 +1358,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\auth\\register-bg.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\background99.jpg",
+      "SourceId": "JobTastic",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\",
+      "BasePath": "_content/JobTastic",
+      "RelativePath": "img/background99.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\background99.jpg"
     },
     {
       "Identity": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\carousel\\banner_1.jpg",

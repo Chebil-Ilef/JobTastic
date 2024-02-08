@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\Uploads\\TD2 Solution Two continuous random variables.pdf"
     },
     {
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\css\\DetailsCss.css",
+      "PackagePath": "staticwebassets\\css\\DetailsCss.css"
+    },
+    {
       "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
     },
@@ -71,6 +75,10 @@
     {
       "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\auth\\register-bg.jpg",
       "PackagePath": "staticwebassets\\img\\auth\\register-bg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\background99.jpg",
+      "PackagePath": "staticwebassets\\img\\background99.jpg"
     },
     {
       "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\carousel\\banner_1.jpg",

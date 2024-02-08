@@ -4,85 +4,110 @@
     ViewData["Title"] = "Create - Job Offer";
 }
 
+<style>
+    body
+    {
+        height: 140vh; /* Ensure full viewport height */
+        margin: 0; /* Remove default body margin */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .mainn
+        {
+            background-image: url('/img/background99.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+</style>
 <div class="container">
 
-    <div class=" text-center mt-5 ">
-        <h3>@ViewData["Title"]</h3>
-        <hr/>
-    </div>
-    <div class="row">
-        <div class="col-lg-7 mx-auto">
-            <div class="card mt-2 mx-auto p-4 bg-light">
-                <div class="card-body bg-light">
-                    <div class="container">
-                        <form asp-action="Create">
-                            <div class="controls">
-                               <input asp-for="AuthorId" style="display: none;" />
+        <div class=" text-center mt-5 ">
+            <h3>@ViewData["Title"]</h3>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="col-lg-7 mx-auto">
+            <div class="mainn">
+                <div class="card mt-2 mx-auto p-4 bg-light">
+                    <div class="card-body bg-light">
+                        <div class="container">
+                            <form asp-action="Create">
+                                <div class="controls">
+                                   <input asp-for="AuthorId" style="display: none;" />
 
-                                <div class="form-group">
-                                    <label asp-for="Title" class="control-label"></label>
-                                    <input asp-for="Title" class="form-control" />
-                                    <span asp-validation-for="Title" class="text-danger"></span>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label asp-for="JobCategoryId" class="control-label"></label>
-                                            <select class="form-control" asp-for="JobCategoryId"
-                                                    asp-items="@(new SelectList(@Model.JobCategories, "JobCategoryId", "Name"))">
-                                            </select>
-                                            <span asp-validation-for="JobCategoryId" class="text-danger"></span>
+                                    <div class="form-group">
+                                        <label asp-for="Title" class="control-label"></label>
+                                        <input asp-for="Title" class="form-control" />
+                                        <span asp-validation-for="Title" class="text-danger"></span>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label asp-for="JobCategoryId" class="control-label"></label>
+                                                <select class="form-control" asp-for="JobCategoryId"
+                                                        asp-items="@(new SelectList(@Model.JobCategories, "JobCategoryId", "Name"))">
+                                                </select>
+                                                <span asp-validation-for="JobCategoryId" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label asp-for="JobTypeId" class="control-label"></label>
+                                                <select class="form-control" asp-for="JobTypeId"
+                                                        asp-items="@(new SelectList(@Model.JobTypes, "JobTypeId", "Name"))">
+                                                </select>
+                                                <span asp-validation-for="JobTypeId" class="text-danger"></span>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label asp-for="JobTypeId" class="control-label"></label>
-                                            <select class="form-control" asp-for="JobTypeId"
-                                                    asp-items="@(new SelectList(@Model.JobTypes, "JobTypeId", "Name"))">
-                                            </select>
-                                            <span asp-validation-for="JobTypeId" class="text-danger"></span>
-                                        </div>
-                                    </div>
-                                </div>
                             
-                                <div asp-validation-summary="All" class="text-danger"></div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label asp-for="Salary" class="control-label"></label>
-                                            <input asp-for="Salary" class="form-control" />
-                                            <span asp-validation-for="Salary" class="text-danger"></span>
+                                    <div asp-validation-summary="All" class="text-danger"></div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label asp-for="Salary" class="control-label"></label>
+                                                <input asp-for="Salary" class="form-control" />
+                                                <span asp-validation-for="Salary" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label asp-for="Location" class="control-label"></label>
+                                                <input asp-for="Location" class="form-control" />
+                                                <span asp-validation-for="Location" class="text-danger"></span>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="form-group">
-                                            <label asp-for="Location" class="control-label"></label>
-                                            <input asp-for="Location" class="form-control" />
-                                            <span asp-validation-for="Location" class="text-danger"></span>
+                                            <label asp-for="Description" class="control-label"></label>
+                                            <textarea asp-for="Description" class="form-control" placeholder="Write your Job description here." rows="4"></textarea>
+                                            <span asp-validation-for="Description" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <input type="submit" value="Create" class="btn btn-success btn-sm btn-block" />
+                                            <a asp-action="Index" class="btn btn-defaultbtn-sm btn-block">Back to list</a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label asp-for="Description" class="control-label"></label>
-                                        <textarea asp-for="Description" class="form-control" placeholder="Write your Job description here." rows="4"></textarea>
-                                        <span asp-validation-for="Description" class="text-danger"></span>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group">
-                                        <input type="submit" value="Create" class="btn btn-success btn-sm btn-block" />
-                                        <a asp-action="Index" class="btn btn-defaultbtn-sm btn-block">Back to list</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+                            </form>
 
-                     </div>
-                  </div>
+                         </div>
+                      </div>
+                </div>
             </div>
+        </div>
     </div>
-
+</div>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
