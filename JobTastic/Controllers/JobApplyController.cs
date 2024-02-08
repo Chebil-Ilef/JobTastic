@@ -49,27 +49,36 @@ namespace JobTastic.Controllers
 
         public async Task<IActionResult> Apply(string id) {
             var user = await _authService.GetSignedUser(User);
-            var jobApply = new JobApply();
-            jobApply.JobApplyId= GenerateRandomUniqueIdString();
-            jobApply.ApplierId = user.Id;
-            jobApply.JobOfferId = id;
-            jobApply.respond = null;
-            jobApply.Applier= await _authService.GetSignedUser(User);
-            //var jobOfferEntity = await _jobOfferService.GetOfferById(id);
-            //var jobOfferViewModel = _mapper.Map<JobOffer>(jobOfferEntity);
-            //jobApply.JobOffer = jobOfferViewModel;
-            jobApply.handled = false;
-            jobApply.result = "Not Responded yet";
-            var result = await _jobApplyService.Add(jobApply);
-            if (result)
+            var allowed = await _jobApplyService.GetApplication(user.Id, id);
+            if (allowed.Count() != 0)
             {
-                TempData["Message"] = "Application sent";
+                TempData["Message"] = "You already sent an application for this job offer";
                 return RedirectToAction(nameof(Index));
             }
             else
             {
-                TempData["Message"] = "Try again";
-                return RedirectToAction("Details","JobOffer",new { id = id });
+                var jobApply = new JobApply();
+                jobApply.JobApplyId = GenerateRandomUniqueIdString();
+                jobApply.ApplierId = user.Id;
+                jobApply.JobOfferId = id;
+                jobApply.respond = null;
+                jobApply.Applier = await _authService.GetSignedUser(User);
+                //var jobOfferEntity = await _jobOfferService.GetOfferById(id);
+                //var jobOfferViewModel = _mapper.Map<JobOffer>(jobOfferEntity);
+                //jobApply.JobOffer = jobOfferViewModel;
+                jobApply.handled = false;
+                jobApply.result = "Not Responded yet";
+                var result = await _jobApplyService.Add(jobApply);
+                if (result)
+                {
+                    TempData["Message"] = "Application sent";
+                    return RedirectToAction(nameof(Index));
+                }
+                else
+                {
+                    TempData["Message"] = "Try again";
+                    return RedirectToAction("Details", "JobOffer", new { id = id });
+                }
             }
            
         }

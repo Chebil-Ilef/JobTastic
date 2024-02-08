@@ -9,5 +9,6 @@ namespace JobTastic.Services.IServices
 
         Task<bool> Add(JobApply item);
         Task<IEnumerable<JobApply>> GetByJobOfferId(string id);
+        Task<IEnumerable<JobApply>> GetApplication(string userId, string JobId);
     }
 }
