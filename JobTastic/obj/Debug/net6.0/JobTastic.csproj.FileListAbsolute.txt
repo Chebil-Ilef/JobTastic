@@ -1482,6 +1482,7 @@ C:\Users\msi\OneDrive\Bureau\test\JobTastic\obj\Debug\net6.0\refint\JobTastic.dl
 C:\Users\msi\OneDrive\Bureau\test\JobTastic\obj\Debug\net6.0\JobTastic.pdb
 C:\Users\msi\OneDrive\Bureau\test\JobTastic\obj\Debug\net6.0\JobTastic.genruntimeconfig.cache
 C:\Users\msi\OneDrive\Bureau\test\JobTastic\obj\Debug\net6.0\ref\JobTastic.dll
+
 C:\Users\msi\OneDrive\Bureau\last\JobTastic\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\msi\OneDrive\Bureau\last\JobTastic\bin\Debug\net6.0\appsettings.json
 C:\Users\msi\OneDrive\Bureau\last\JobTastic\bin\Debug\net6.0\JobTastic.staticwebassets.runtime.json
@@ -2078,6 +2079,7 @@ D:\GL3\Framework ASP.net\Project\JobTastic\obj\Debug\net6.0\refint\JobTastic.dll
 D:\GL3\Framework ASP.net\Project\JobTastic\obj\Debug\net6.0\JobTastic.pdb
 D:\GL3\Framework ASP.net\Project\JobTastic\obj\Debug\net6.0\JobTastic.genruntimeconfig.cache
 D:\GL3\Framework ASP.net\Project\JobTastic\obj\Debug\net6.0\ref\JobTastic.dll
+
 C:\Users\Asma\Desktop\project\JobTastic\JobTastic\obj\Debug\net6.0\JobTastic.csproj.AssemblyReference.cache
 C:\Users\Asma\Desktop\project\JobTastic\JobTastic\obj\Debug\net6.0\JobTastic.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Asma\Desktop\project\JobTastic\JobTastic\obj\Debug\net6.0\JobTastic.AssemblyInfoInputs.cache

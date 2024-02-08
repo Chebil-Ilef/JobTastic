@@ -92,14 +92,12 @@ namespace JobTastic.Controllers
           
 
             var user = await _authService.GetSignedUser(User);
-            if (user != null)
+            foreach (var offer in vms)
             {
-                foreach (var offer in vms)
-                {
-                    offer.CanEdit = await _jobOfferService.CanUserEditOffer(user.Id, offer.JobOfferId);
-                }
-
+                offer.CanEdit = await _jobOfferService.CanUserEditOffer(user.Id, offer.JobOfferId);
             }
+        
+
             return View(vms);
         }
         [Authorize(Roles = RoleHelper.Admin)]
@@ -248,11 +246,11 @@ namespace JobTastic.Controllers
             {
                 return View(vm);
             }
-            /*var applyButton = await _jobApplyService.GetByJobOfferId(jobOffer.jobOfferId);
+            var applyButton = await _jobApplyService.GetByJobOfferId(jobOffer.jobOfferId);
             if (applyButton == null)
             {
                 ViewBag.ApplyButton = true;
-            }*/
+            }
             var user = await _authService.GetSignedUser(User);
             vm.CanEdit = await _jobOfferService.CanUserEditOffer(user.Id, vm.JobOfferId);
             return View(vm);

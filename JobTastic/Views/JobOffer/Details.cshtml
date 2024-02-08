@@ -44,11 +44,11 @@
                 <div>
                     
                     <a asp-action="Index" class="btn btn-default btn-sm">Back to list</a>
-                        @if (User.IsInRole("JobSearcher"))
+                        @if ((User.IsInRole("JobSearcher")) && (ViewBag.ApplyButton == true))
                         {
                             <a asp-controller="JobApply" asp-action="Apply" asp-route-id="@Model.JobOfferId" class="btn btn-primary btn-sm">Apply</a>
                         }
-                    </div>
+                </div>
 
             </div>
 
