@@ -577,11 +577,19 @@
       "PackagePath": "staticwebassets\\img\\illustrations\\consultancy.png"
     },
     {
+<<<<<<< HEAD
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\cv.png",
+      "PackagePath": "staticwebassets\\img\\illustrations\\cv.png"
+    },
+    {
+      "Id": "C:\\Users\\Asma\\Desktop\\project\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\design.png",
+=======
       "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\cv.png",
       "PackagePath": "staticwebassets\\img\\illustrations\\cv.png"
     },
     {
       "Id": "C:\\Users\\olfam\\OneDrive\\Documents\\GitHub\\JobTastic\\JobTastic\\wwwroot\\img\\illustrations\\design.png",
+>>>>>>> 1c30147efce09a8bf842afbcc71ad4285c13e067
       "PackagePath": "staticwebassets\\img\\illustrations\\design.png"
     },
     {

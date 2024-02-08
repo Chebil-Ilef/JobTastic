@@ -65,6 +65,10 @@
                 <li class="nav-item px-2"><a class="nav-link fw-medium active" aria-current="page" href="/#">Home</a></li>
                 <li class="nav-item px-2"><a class="nav-link fw-medium" href="/#aboutUs">About Us</a></li>
                 <li class="nav-item px-2"><a class="nav-link fw-medium" href="JobOffer">Jobs</a></li>
+                    @if (User.IsInRole("JobSearcher") || User.IsInRole("Recruiter"))
+                    {
+                        <li class="nav-item px-2"><a class="nav-link fw-medium" href="JobApply">Applications</a></li>
+                }
                 <li class="nav-item px-2"><a class="nav-link fw-medium" href="/#Contact">Contact</a></li>
                 <partial name="_LoginPartial.cshtml" />
             </ul>

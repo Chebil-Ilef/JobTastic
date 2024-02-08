@@ -1,0 +1,92 @@
+﻿@using JobTastic.Services.IServices;
+@model IEnumerable<JobTastic.Models.JobApply>
+@inject IAuthService AuthService
+
+@{
+    ViewData["Title"] = "Job offers";
+}
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+    <!-- ===============================================-->
+    <!--    Stylesheets-->
+    <!-- ===============================================-->
+    <link href="~/css/theme.css" rel="stylesheet" />
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/css/style.css" rel="stylesheet">
+
+
+</head>
+
+<main class="main" id="top">
+    <section class="py-0" id="home">
+
+        <div class="container">
+            <div class="row align-items-center min-vh-75 min-vh-md-100">
+                <div class="job-listing-area pt-120 pb-120">
+                    <div class="container">
+                        <div class="row">
+                            <!-- Right content -->
+                            <!-- Featured_job_start -->
+                            <section class="featured-job-area">
+                                <div class="container">
+                                    <!-- Count of JobApply list Start -->
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="count-job mb-35">
+                                                <span>@Model.Count() Applications found</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Count of Job list End -->
+                                    <!-- single-job-content -->
+                                    @if (TempData["Message"] != null)
+                                    {
+                                        <div class="alert alert-success">
+                                            @TempData["Message"]
+                                        </div>
+                                    }
+                                    @foreach (var item in Model)
+                                    {
+                                        <div class="single-job-items mb-30">
+                                            <div class="job-items">
+                                                <div class="job-tittle job-tittle2">
+                                                    <a asp-controller= "JobOffer" asp-action="Details" asp-route-id="@item.JobOffer.jobOfferId">
+                                                        <h4>@Html.DisplayFor(modelItem => item.JobOffer.Title)</h4>
+                                                    </a>
+                                                    <ul>
+                                                        <li>@Html.DisplayFor(modelItem => item.result)</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="items-link items-link2 f-right">
+                                                <h1>sending time:</h1>
+                                                <span>@Html.DisplayFor(modelItem => item.sent)</span>
+                                                @if (item.respond!=null)
+                                                {
+                                                    <h1>response time:</h1>
+                                                    <span>@Html.DisplayFor(modelItem => item.respond)</span>
+                                                }
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </section>
+                            <!-- Featured_job_end -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Job List Area End -->
+            </div>
+
+        </div>
+
+
+    </section>
+</main>

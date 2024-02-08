@@ -116,6 +116,41 @@ namespace JobTastic.Migrations
                     b.ToTable("AdminDashboardViewModel");
                 });
 
+            modelBuilder.Entity("JobTastic.Models.JobApply", b =>
+                {
+                    b.Property<string>("JobApplyId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ApplierId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("JobOfferId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<bool>("handled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("respond")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("result")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("sent")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("JobApplyId");
+
+                    b.HasIndex("ApplierId");
+
+                    b.HasIndex("JobOfferId");
+
+                    b.ToTable("JobApplies");
+                });
+
             modelBuilder.Entity("JobTastic.Models.JobCategory", b =>
                 {
                     b.Property<string>("JobCategoryId")
@@ -358,6 +393,25 @@ namespace JobTastic.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
+                });
+
+            modelBuilder.Entity("JobTastic.Models.JobApply", b =>
+                {
+                    b.HasOne("JobTastic.Areas.Identity.Data.ApplicationUser", "Applier")
+                        .WithMany()
+                        .HasForeignKey("ApplierId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("JobTastic.Models.JobOffer", "JobOffer")
+                        .WithMany()
+                        .HasForeignKey("JobOfferId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Applier");
+
+                    b.Navigation("JobOffer");
                 });
 
             modelBuilder.Entity("JobTastic.Models.JobOffer", b =>

@@ -22,6 +22,7 @@ namespace JobTastic.Controllers
         private readonly IJobCategoryService _jobCategoryService;
         private readonly IAuthService _authService;
         private readonly IJobTypeService _jobTypeService;
+        private readonly IJobApplyService _jobApplyService;
         private readonly IMapper _mapper;
 
         public JobOfferController(
@@ -29,12 +30,14 @@ namespace JobTastic.Controllers
             IJobCategoryService jobCategoryService,
             IJobTypeService jobTypeService,
             IAuthService authService,
+            IJobApplyService jobApplyService,
             IMapper mapper)
         {
             _jobOfferService = jobOfferService;
             _jobCategoryService = jobCategoryService;
             _jobTypeService = jobTypeService;
             _authService = authService;
+            _jobApplyService = jobApplyService; 
             _mapper = mapper;
         }
 
@@ -230,6 +233,7 @@ namespace JobTastic.Controllers
             }
 
             var jobOffer = await _jobOfferService.GetOfferById(id);
+            
             if (jobOffer == null)
             {
                 return View("NotFound");
@@ -242,7 +246,11 @@ namespace JobTastic.Controllers
             {
                 return View(vm);
             }
-
+            var applyButton = await _jobApplyService.GetByJobOfferId(jobOffer.jobOfferId);
+            if (applyButton == null)
+            {
+                ViewBag.ApplyButton = true;
+            }
             var user = await _authService.GetSignedUser(User);
             vm.CanEdit = await _jobOfferService.CanUserEditOffer(user.Id, vm.JobOfferId);
             return View(vm);
