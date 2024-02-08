@@ -87,6 +87,10 @@
               "target": "Package",
               "version": "[6.0.23, )"
             },
+            "Microsoft.NET.Sdk.Razor": {
+              "target": "Package",
+              "version": "[3.1.32, )"
+            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[6.0.16, )"
