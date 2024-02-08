@@ -3,6 +3,8 @@ using JobTastic.Migrations;
 using JobTastic.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using SendGrid.Helpers.Mail;
+using System.Linq;
 using System.Diagnostics;
 
 namespace JobTastic.Controllers
@@ -27,7 +29,11 @@ namespace JobTastic.Controllers
                 NumberOfRecruiters = _dbContext.Users.Count(u => u.SelectedRole == "Recruiter"),
                 NumberOfJobSearchers = _dbContext.Users.Count(u => u.SelectedRole == "JobSearcher"),
                 Offers = GetTopOffers(),
-                UsersList = GetUsersList()
+                UsersList = GetUsersList(),
+                ChartData = GetChartData(),
+                BarData =GetBarData()
+
+
 
             };
 
@@ -44,11 +50,11 @@ namespace JobTastic.Controllers
             // Fetch data from the database
             var topOffers = _dbContext.JobOffers
                 .OrderByDescending(j => j.Visits)
-                .Take(7) // Adjust based on the number of top offers you want to display
+                .Take(7) 
                 .Select(j => new Offer
                 {
                     JobTitle = j.Title,
-                    Salary = j.Salary, // Adjust this based on your actual property name
+                    Salary = j.Salary, 
                     DateSubmitted = j.Submitted,
                     VisitsCount = j.Visits,
                     Location = j.Location
@@ -72,6 +78,58 @@ namespace JobTastic.Controllers
 
             return usersList;
         }
+
+
+ 
+
+        public ChartData GetChartData()
+        {
+            Dictionary<string, string> categoryIds = new Dictionary<string, string>
+    {
+        { "IT", "1" }, 
+        { "Accounting", "2" }, 
+        { "Arts", "3" }, 
+        { "Education", "4" },
+        { "Law", "5" }, 
+        { "Others", "6" } 
+    };
+
+            ChartData ChartData = new ChartData();
+
+            foreach (var category in categoryIds)
+            {
+                int categoryCount = _dbContext.JobOffers.Count(j => j.JobCategoryId == category.Value);
+                ChartData.Labels.Add(category.Key);
+                ChartData.Values.Add(categoryCount);
+            }
+
+        
+            return ChartData;
+        }
+
+        public BarData GetBarData()
+        {
+            Dictionary<string, string> typesIds = new Dictionary<string, string>
+    {
+        { "part time", "1" },
+        { "full time", "2" },
+        { "remote", "3" }
+        
+    };
+
+            BarData BarData = new BarData();
+
+            foreach (var type in typesIds)
+            {
+                int typeCount = _dbContext.JobOffers.Count(j => j.JobTypeId == type.Value);
+                BarData.Labs.Add(type.Key);
+                BarData.Data.Add(typeCount);
+            }
+
+
+            return BarData;
+        }
+
 
 
 

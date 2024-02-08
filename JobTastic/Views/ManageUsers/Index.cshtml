@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Skydash Admin</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="~/vendors/feather/feather.css">
+    <link rel="stylesheet" href="~/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="~/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="~/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+    <link rel="stylesheet" href="~/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" type="text/css" href="~/js/select.dataTables.min.css">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="~/css/vertical-layout-light/style.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="~/images/favicon.png" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+    <div class="container-scroller">
+        <!-- partial -->
+        <div class="container-fluid page-body-wrapper">
+            <!-- partial:partials/_settings-panel.html -->
+            <div class="theme-setting-wrapper">
+                <div id="settings-trigger"><i class="ti-settings"></i></div>
+                <div id="theme-settings" class="settings-panel">
+                    <i class="settings-close ti-close"></i>
+                    <p class="settings-heading">SIDEBAR SKINS</p>
+                    <div class="sidebar-bg-options selected" id="sidebar-light-theme"><div class="img-ss rounded-circle bg-light border mr-3"></div>Light</div>
+                    <div class="sidebar-bg-options" id="sidebar-dark-theme"><div class="img-ss rounded-circle bg-dark border mr-3"></div>Dark</div>
+                    <p class="settings-heading mt-2">HEADER SKINS</p>
+                    <div class="color-tiles mx-0 px-4">
+                        <div class="tiles success"></div>
+                        <div class="tiles warning"></div>
+                        <div class="tiles danger"></div>
+                        <div class="tiles info"></div>
+                        <div class="tiles dark"></div>
+                        <div class="tiles default"></div>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">
+                            <i class="icon-grid menu-icon"></i>
+                            <span class="menu-title">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                            <i class="icon-layout menu-icon"></i>
+                            <span class="menu-title">Jobs</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-basic">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="/">Job Offers</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="/">Pending Job Offers</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+                            <i class="icon-grid-2 menu-icon"></i>
+                            <span class="menu-title">Manage Users</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="tables">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="/ManageUsers/">Users</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="/ManageUsers/Create">Add User</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="/ManageUsers/Edit">Edit User</a></li>
+
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ManageAdmin">
+                            <i class="icon-grid menu-icon"></i>
+                            <span class="menu-title"> Admin Users</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+
+            <div class="col-md-12  grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-title mb-0">Users List</p>
+                        <br />
+                        <div class="table-responsive">
+                            <table class="table table-borderless">
+                                <thead>
+                                    <tr>
+                                        <th class="pl-0  pb-2 border-bottom">Username</th>
+                                        <th class="border-bottom pb-2">Email</th>
+                                        <th class="border-bottom pb-2">Selected role</th>
+                                        <th class="border-bottom pb-2">Manage</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var user in Model.UsersList)
+                                    {
+                                        <tr>
+                                            <td class="pl-0">@user.Name</td>
+                                            <td>
+                                                <p class="pl-0">
+                                                    <span class="font-weight-bold mr-2">@user.Email</span>
+                                                </p>
+                                            </td>
+                                            <td class="text-muted">@user.SelectedRole</td>
+                                            <td class="font-weight-medium pl-0">
+                                                <div class="badge badge-danger">Desactivate</div>
+
+                                            </td>
+                                            
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                  
+
+
+
+
+                            <footer class="footer">
+                                <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                                    <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2024. JobTastic GL3. All rights reserved.</span>
+                                    <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="ti-heart text-danger ml-1"></i></span>
+                                </div>
+                            </footer>
+                            <!-- partial -->
+
+
+                <!-- plugins:js -->
+                <script src="~/vendors/js/vendor.bundle.base.js"></script>
+                <!-- endinject -->
+                <!-- Plugin js for this page -->
+                <script src="~/vendors/chart.js/Chart.min.js"></script>
+                <script src="~/vendors/datatables.net/jquery.dataTables.js"></script>
+                <script src="~/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+                <script src="~/js/dataTables.select.min.js"></script>
+
+                <!-- End plugin js for this page -->
+                <!-- inject:js -->
+                <script src="~/js/off-canvas.js"></script>
+                <script src="~/js/hoverable-collapse.js"></script>
+                <script src="~/js/template.js"></script>
+                <script src="~/js/settings.js"></script>
+                <!-- endinject -->
+                <!-- End custom js for this page-->
+</body>
+
+</html>
+

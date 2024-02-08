@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>JobTastic Admin</title>
+    <title>Skydash Admin</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="~/vendors/feather/feather.css">
     <link rel="stylesheet" href="~/vendors/ti-icons/css/themify-icons.css">
@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="~/css/vertical-layout-light/style.css">
     <!-- endinject -->
     <link rel="shortcut icon" href="~/images/favicon.png" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 <body>
     <div class="container-scroller">
@@ -44,7 +46,7 @@
                     </div>
                 </div>
             </div>
-           
+
             <nav class="sidebar sidebar-offcanvas" id="sidebar">
                 <ul class="nav">
                     <li class="nav-item">
@@ -64,33 +66,33 @@
                                 <li class="nav-item"> <a class="nav-link" href="/JobOffer/AdminIndex"> Job Offers </a></li>
                                 <li class="nav-item"> <a class="nav-link" href="/JobOffer/AdminPendingJobs"> Pending Job Offers </a></li>
                                 <li class="nav-item"> <a class="nav-link" href="/JobType"> Job Types </a></li>
-                                <li class="nav-item"> <a class="nav-link" href="/JobCategory"> Job Category </a></li>
+                                <li class="nav-item"> <a class="nav-link" href="/JobCategory"> Job Categories </a></li>
                             </ul>
                         </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">
-                            <i class="icon-grid menu-icon"></i>
-                            <span class="menu-title">Manage Users</span>
-                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
                             <i class="icon-grid-2 menu-icon"></i>
-                            <span class="menu-title">Admin Users</span>
+                            <span class="menu-title">Manage Users</span>
                             <i class="menu-arrow"></i>
                         </a>
                         <div class="collapse" id="tables">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="/">Admins</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="/">Add Admin</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="/">Remove Admin</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="/ManageUsers/">Users</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="/ManageUsers/Create">Add User</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="/ManageUsers/Edit">Edit User</a></li>
+
                             </ul>
                         </div>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ManageAdmin">
+                            <i class="icon-grid menu-icon"></i>
+                            <span class="menu-title"> Admin Users</span>
+                        </a>
+                    </li>
                 </ul>
             </nav>
-            
             <!-- partial -->
             <div class="main-panel">
                 <div class="content-wrapper">
@@ -204,10 +206,10 @@
                                 </div>
                             </div>
                         </div>
-     
-                    <div class="col-md-5 grid-margin stretch-card">
-                        <div class="card">
-                            <div class="card-body">
+
+                        <div class="col-md-5 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
                                     <p class="card-title mb-0">Users List</p>
                                     <div class="table-responsive">
                                         <table class="table table-borderless">
@@ -237,102 +239,132 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 stretch-card grid-margin">
+                        <!-- CHART -->
+
+                        <div class="col-md-6 stretch-card grid-margin ">
                             <div class="card">
                                 <div class="card-body">
-                                    <p class="card-title">Notifications</p>
-                                    <ul class="icon-data-list">
-                                        <li>
-                                            <div class="d-flex">
-                                                <img src="images/faces/face1.jpg" alt="user">
-                                                <div>
-                                                    <p class="text-info mb-1">Isabella Becker</p>
-                                                    <p class="mb-0">Sales dashboard have been created</p>
-                                                    <small>9:30 am</small>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="d-flex">
-                                                <img src="images/faces/face2.jpg" alt="user">
-                                                <div>
-                                                    <p class="text-info mb-1">Adam Warren</p>
-                                                    <p class="mb-0">You have done a great job #TW111</p>
-                                                    <small>10:30 am</small>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="d-flex">
-                                                <img src="images/faces/face3.jpg" alt="user">
-                                                <div>
-                                                    <p class="text-info mb-1">Leonard Thornton</p>
-                                                    <p class="mb-0">Sales dashboard have been created</p>
-                                                    <small>11:30 am</small>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="d-flex">
-                                                <img src="images/faces/face4.jpg" alt="user">
-                                                <div>
-                                                    <p class="text-info mb-1">George Morrison</p>
-                                                    <p class="mb-0">Sales dashboard have been created</p>
-                                                    <small>8:50 am</small>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="d-flex">
-                                                <img src="images/faces/face5.jpg" alt="user">
-                                                <div>
-                                                    <p class="text-info mb-1">Ryan Cortez</p>
-                                                    <p class="mb-0">Herbs are fun and easy to grow.</p>
-                                                    <small>9:00 am</small>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
+                                    <p class="card-title">Job Categories</p>
+                                    <div>
+                                        <canvas id="myChart"></canvas>
+                                    </div>
+
+
+                                    <script>
+                                        const ctx = document.getElementById('myChart');
+                                        //Static for testing
+                                        //var labels=['IT', 'Accounting', 'Arts', 'Education', 'Law', 'Others'];
+                                        //var values = [12, 19, 3, 5, 2, 3];
+                                        var labels = @Html.Raw(Json.Serialize(Model.ChartData.Labels));
+                                        var values = @Html.Raw(Json.Serialize(Model.ChartData.Values));
+
+
+                                        new Chart(ctx, {
+                                            type: 'pie',
+                                            data: {
+                                                labels: labels,
+                                                datasets: [{
+                                                    label: 'Total',
+                                                    data: values,
+                                                    borderWidth: 1
+                                                }]
+                                            }
+
+                                        });
+                                    </script>
+
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <!-- content-wrapper ends -->
-                <!-- partial:partials/_footer.html -->
-                <footer class="footer">
-                    <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2024. JobTastic GL3. All rights reserved.</span>
-                        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="ti-heart text-danger ml-1"></i></span>
-                    </div>
-                </footer>
-                <!-- partial -->
-            </div>
-            <!-- main-panel ends -->
-        </div>
-        <!-- page-body-wrapper ends -->
-    </div>
-    <!-- container-scroller -->
-    <!-- plugins:js -->
-    <script src="~/vendors/js/vendor.bundle.base.js"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page -->
-    <script src="~/vendors/chart.js/Chart.min.js"></script>
-    <script src="~/vendors/datatables.net/jquery.dataTables.js"></script>
-    <script src="~/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
-    <script src="~/js/dataTables.select.min.js"></script>
+                        <!-- CHART END -->
+                        <!-- Bar Graph -->
+                        <div class="col-md-6 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <p class="card-title">Job Types</p>
+                                    <div>
+                                        <canvas id="barChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Bar Graph END -->
 
-    <!-- End plugin js for this page -->
-    <!-- inject:js -->
-    <script src="~/js/off-canvas.js"></script>
-    <script src="~/js/hoverable-collapse.js"></script>
-    <script src="~/js/template.js"></script>
-    <script src="~/js/settings.js"></script>
-    <!-- endinject -->
-    <!-- Custom js for this page-->
-    <script src="~/js/dashboard.js"></script>
-    <script src="~/js/Chart.roundedBarCharts.js"></script>
-    <!-- End custom js for this page-->
+                        <script>
+                            const ctx2 = document.getElementById('barChart');
+                            //Static for testing
+                            //var labs=['Full Time', 'Part Time', 'Remote'];
+                            //var data =[12, 19, 3];
+                            var labs = @Html.Raw(Json.Serialize(Model.BarData.Labs));
+                            var data = @Html.Raw(Json.Serialize(Model.BarData.Data));
+
+                            new Chart(ctx2, {
+                                type: 'bar',
+                                data: {
+                                    labels: labs,
+                                    datasets: [{
+                                        label: 'Total',
+                                        data: data,
+                                        backgroundColor: [
+                                            'rgba(153, 102, 255, 0.2)',
+                                            'rgba(54, 162, 235, 0.2)',
+                                            'rgba(75, 192, 192, 0.2)'
+                                           
+                                        ],
+                                        borderColor: [
+                                            'rgb(153, 102, 255)',
+                                            'rgb(54, 162, 235)',
+                                            'rgb(75, 192, 192)'
+
+                                        ],
+                                        borderWidth: 1
+                                    }]
+                                },
+                                options: {
+                                    scales: {
+                                        y: {
+                                            beginAtZero: true,
+                                            stepSize: 5,
+                                        }
+                                    }
+                                }
+                            });
+                        </script>
+
+
+                        <!-- content-wrapper ends -->
+                        <!-- partial:partials/_footer.html -->
+                        <footer class="footer">
+                            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                                <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2024. JobTastic GL3. All rights reserved.</span>
+                                <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="ti-heart text-danger ml-1"></i></span>
+                            </div>
+                        </footer>
+                        <!-- partial -->
+                    </div>
+                    <!-- main-panel ends -->
+                </div>
+                <!-- page-body-wrapper ends -->
+            </div>
+            <!-- container-scroller -->
+            <!-- plugins:js -->
+            <script src="~/vendors/js/vendor.bundle.base.js"></script>
+            <!-- endinject -->
+            <!-- Plugin js for this page -->
+            <script src="~/vendors/chart.js/Chart.min.js"></script>
+            <script src="~/vendors/datatables.net/jquery.dataTables.js"></script>
+            <script src="~/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+            <script src="~/js/dataTables.select.min.js"></script>
+
+            <!-- End plugin js for this page -->
+            <!-- inject:js -->
+            <script src="~/js/off-canvas.js"></script>
+            <script src="~/js/hoverable-collapse.js"></script>
+            <script src="~/js/template.js"></script>
+            <script src="~/js/settings.js"></script>
+            <!-- endinject -->
+          
+            <!-- End custom js for this page-->
 </body>
 
 </html>
