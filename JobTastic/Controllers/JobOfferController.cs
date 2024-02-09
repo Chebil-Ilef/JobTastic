@@ -37,7 +37,7 @@ namespace JobTastic.Controllers
             _jobCategoryService = jobCategoryService;
             _jobTypeService = jobTypeService;
             _authService = authService;
-            _jobApplyService = jobApplyService; 
+            _jobApplyService = jobApplyService;
             _mapper = mapper;
         }
 
@@ -55,12 +55,27 @@ namespace JobTastic.Controllers
 
         // GET: JobOffer
         [AllowAnonymous]
-        public async Task<IActionResult> Index(string sortOrder)
+        public async Task<IActionResult> Index(string jobType, string jobCategorie, string sortOrder)
         {     //retrieving job offers 
             var jobOffers = await _jobOfferService.GetAllOffers();
             //retrieving non pending  job offers
             var nonPendingJobOffers = jobOffers.Where(offer => !offer.IsPending).ToList();
+           
+           
+            // Filter job offers based on selected job type, if specified
+            if (!string.IsNullOrEmpty(jobType))
+            {
+                nonPendingJobOffers = nonPendingJobOffers.Where(j => j.JobType.Name == jobType).ToList();
+            }
+
+            // Filter job offers based on selected job category, if specified
+            if (!string.IsNullOrEmpty(jobCategorie))
+            {
+                nonPendingJobOffers = nonPendingJobOffers.Where(j => j.jobcategory.Name == jobCategorie).ToList();
+            }
+
             var vms = _mapper.Map<IList<JobOfferViewModel>>(nonPendingJobOffers);
+
             //counting job offers 
             ViewData["JobOfferCount"] = vms.Count;
             // Retrieve job types and categories
@@ -71,15 +86,14 @@ namespace JobTastic.Controllers
             ViewBag.JobTypes = new SelectList(jobTypes, "Name", "Name");
             ViewBag.JobCategories = new SelectList(jobCategories, "Name", "Name");
             //sorting logic (by salary and submission date)
-            ViewBag.SalarySortParm = string.IsNullOrEmpty(sortOrder) ? "salary_desc" : "";
-            ViewBag.DateSortParm = sortOrder=="Date" ? "date_desc" : "Date";
-           
+            ViewBag.Sorting = new List<string> { "salary_desc", "salary_asc", "date_asc", "date_desc" };
+
             switch (sortOrder)
             {
                 case "salary_desc":
                     vms = vms.OrderByDescending(o => o.Salary).ToList();
                     break;
-                case  "date_desc":
+                case "date_desc":
                     vms = vms.OrderByDescending(o => o.Submitted).ToList();
                     break;
                 case "date":
@@ -89,14 +103,15 @@ namespace JobTastic.Controllers
                     vms = vms.OrderBy(o => o.Salary).ToList();
                     break;
             }
-          
+
 
             var user = await _authService.GetSignedUser(User);
-            foreach (var offer in vms)
-            {
-                offer.CanEdit = await _jobOfferService.CanUserEditOffer(user.Id, offer.JobOfferId);
+            if (user != null) {
+                foreach (var offer in vms)
+                {
+                    offer.CanEdit = await _jobOfferService.CanUserEditOffer(user.Id, offer.JobOfferId);
+                }
             }
-        
 
             return View(vms);
         }
@@ -135,45 +150,45 @@ namespace JobTastic.Controllers
         [HttpPost("/JobOffer/AcceptJobOffer/{id}")]
         public async Task<IActionResult> AcceptJobOffer(string id)
         {
-                // Fetch the job offer from the service
-                var jobOffer = await _jobOfferService.GetOfferById(id);
+            // Fetch the job offer from the service
+            var jobOffer = await _jobOfferService.GetOfferById(id);
 
-                // Check if the job offer exists
-                if (jobOffer == null)
-                {
-                    return NotFound();
-                }
+            // Check if the job offer exists
+            if (jobOffer == null)
+            {
+                return NotFound();
+            }
 
-                // Update the IsPending attribute to false
-                jobOffer.IsPending = false;
+            // Update the IsPending attribute to false
+            jobOffer.IsPending = false;
 
-                // Save the changes
-                var result =await _jobOfferService.Edit(jobOffer);
+            // Save the changes
+            var result = await _jobOfferService.Edit(jobOffer);
             if (result)
                 return RedirectToAction(nameof(AdminPendingJobs));
-            else 
+            else
                 return NotFound();
         }
 
         [HttpPost("/JobOffer/DeclineAndDeleteJobOffer/{id}")]
         public async Task<IActionResult> DeclineAndDeleteJobOffer(string id)
         {
-                // Fetch the job offer from the service
-                var jobOffer = await _jobOfferService.GetOfferById(id);
+            // Fetch the job offer from the service
+            var jobOffer = await _jobOfferService.GetOfferById(id);
 
-                // Check if the job offer exists
-                if (jobOffer == null)
-                {
-                    return NotFound();
-                }
+            // Check if the job offer exists
+            if (jobOffer == null)
+            {
+                return NotFound();
+            }
 
-                // Delete the job offer
-                var result = await _jobOfferService.Delete(jobOffer);
+            // Delete the job offer
+            var result = await _jobOfferService.Delete(jobOffer);
 
-                if (result)
-                    return RedirectToAction(nameof(AdminPendingJobs));
-                else
-                    return NotFound();
+            if (result)
+                return RedirectToAction(nameof(AdminPendingJobs));
+            else
+                return NotFound();
         }
 
         /***********************************************************************/
@@ -194,7 +209,7 @@ namespace JobTastic.Controllers
             // Count job offers
             ViewData["JobOfferCount"] = vms.Count;
 
-          
+
 
             // Filtering logic based on job type and job category
             if (!string.IsNullOrEmpty(jobType))
@@ -233,7 +248,7 @@ namespace JobTastic.Controllers
             }
 
             var jobOffer = await _jobOfferService.GetOfferById(id);
-            
+
             if (jobOffer == null)
             {
                 return View("NotFound");
@@ -251,6 +266,7 @@ namespace JobTastic.Controllers
             return View(vm);
         }
 
+        [Authorize(Roles = RoleHelper.Recruiter)]
         // GET: JobOffer/Create
         public async Task<IActionResult> Create()
         {
@@ -290,6 +306,7 @@ namespace JobTastic.Controllers
             return View("NotFound");
         }
 
+        [Authorize(Roles = RoleHelper.Recruiter)]
         // GET: JobOffer/Edit/5
         public async Task<IActionResult> Edit(string id)
         {
@@ -337,6 +354,8 @@ namespace JobTastic.Controllers
             return View("NotFound");
         }
 
+        //[Authorize(Roles = RoleHelper.Admin)] 
+        //[Authorize(Roles = RoleHelper.Recruiter)]
         // GET: JobOffer/Delete/5
         public async Task<IActionResult> Delete(string id)
         {
