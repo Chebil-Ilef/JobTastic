@@ -52,13 +52,6 @@
                                             @TempData["Message"]
                                         </div>
                                     }
-                                    @if (TempData["Delete"] != null)
-                                    {
-                                        <div class="alert alert-success">
-                                            @TempData["Delete"]
-                                        </div>
-                                    }
-
                                     @foreach (var item in Model)
                                     {
                                         <div class="single-job-items mb-30">
@@ -80,18 +73,11 @@
                                                     <h1>response time:</h1>
                                                     <span>@Html.DisplayFor(modelItem => item.respond)</span>
                                                 }
-                                                @if (User.IsInRole("JobSearcher"))
-                                                {
-                                                    <a asp-controller="JobApply" asp-action="Delete" asp-route-JobApplyId="@item.JobApplyId" class="btn btn-primary btn-sm">Delete</a>
-                                                }
                                                 @if (User.IsInRole("Recruiter"))
                                                 {
-                                                    <a asp-controller="JobApply" asp-action="ViewApplierCv" asp-route-applierId="@item.ApplierId" class="btn btn-primary btn-sm">Check applier CV</a>
-                                                    @if (item.respond == null)
-                                                    {
-                                                        <a asp-controller="JobApply" asp-action="Accept" asp-route-JobApplyId="@item.JobApplyId" class="btn btn-primary btn-sm">Accept</a>
-                                                        <a asp-controller="JobApply" asp-action="Refuse" asp-route-JobApplyId="@item.JobApplyId" class="btn btn-primary btn-sm">Refuse</a>
-                                                    }
+                                                    <a asp-controller="JobApply" asp-action="ViewApplierCv" asp-route-id="@item.ApplierId" class="btn btn-primary btn-sm">Check applier CV</a>
+                                                    <a asp-controller="JobApply" asp-action="Accept" asp-route-id="@item.JobApplyId" class="btn btn-primary btn-sm">Accept</a>
+                                                    <a asp-controller="JobApply" asp-action="Refuse" asp-route-id="@item.JobApplyId" class="btn btn-primary btn-sm">Refuse</a>
                                                 }
                                             </div>
                                         </div>

@@ -1,5 +1,4 @@
-﻿
-using JobTastic.Data;
+﻿using JobTastic.Data;
 using JobTastic.Models;
 using JobTastic.Repositories.IRepositories;
 using Microsoft.EntityFrameworkCore;
@@ -53,12 +52,13 @@ namespace JobTastic.Repositories
         public async Task<JobApply> GetById(string id)
         {
             return await _context.JobApplies
+                 .Include(x => x.JobOffer)
+               .Include(x => x.Applier)
                .FirstOrDefaultAsync(x => x.JobApplyId == id);
         }
-        public void Delete(JobApply jobDelete)
+        public void Update(JobApply item)
         {
-            _context.Remove(jobDelete);
+            _context.Update(item);
         }
-        
     }
 }
