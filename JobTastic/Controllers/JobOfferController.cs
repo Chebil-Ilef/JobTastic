@@ -246,11 +246,6 @@ namespace JobTastic.Controllers
             {
                 return View(vm);
             }
-            var applyButton = await _jobApplyService.GetByJobOfferId(jobOffer.jobOfferId);
-            if (applyButton == null)
-            {
-                ViewBag.ApplyButton = true;
-            }
             var user = await _authService.GetSignedUser(User);
             vm.CanEdit = await _jobOfferService.CanUserEditOffer(user.Id, vm.JobOfferId);
             return View(vm);

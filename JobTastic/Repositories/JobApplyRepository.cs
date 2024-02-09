@@ -49,5 +49,16 @@ namespace JobTastic.Repositories
                .Where(x => x.JobOfferId == JobId && x.ApplierId == userId)
                .ToListAsync();
         }
+        public async Task<JobApply> GetById(string id)
+        {
+            return await _context.JobApplies
+                 .Include(x => x.JobOffer)
+               .Include(x => x.Applier)
+               .FirstOrDefaultAsync(x => x.JobApplyId == id);
+        }
+        public void Update(JobApply item)
+        {
+            _context.Update(item);
+        }
     }
 }

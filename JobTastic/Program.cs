@@ -13,6 +13,7 @@ using BulletinBoard.Infrastructure.AutoMapper;
 using Autofac.Core;
 using JobTastic.Controllers;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Builder;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("AuthDbContextConnection") ?? throw new InvalidOperationException("Connection string 'sendMailContextConnection' not found.");
@@ -80,7 +81,6 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-
 app.MapRazorPages();
 
 /*seeding*/
