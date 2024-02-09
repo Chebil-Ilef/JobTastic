@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using JobTastic.Data;
 using JobTastic.Models;
 using JobTastic.Models.JobOfferViewModels;
 using JobTastic.Services;
@@ -6,6 +7,7 @@ using JobTastic.Services.IServices;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using SendGrid.Helpers.Mail;
 using System.Collections.Generic;
 
 namespace JobTastic.Controllers
@@ -16,9 +18,11 @@ namespace JobTastic.Controllers
         private readonly IAuthService _authService;
         private readonly IMapper _mapper;
         private readonly IJobOfferService _jobOfferService;
+        private readonly AuthDbContext _db;
         public JobApplyController(
             IJobApplyService jobApplyService,
             IAuthService authService,
+            AuthDbContext db,
             IMapper mapper,
             IJobOfferService jobOfferService)
         {
@@ -26,6 +30,7 @@ namespace JobTastic.Controllers
             _authService = authService;
             _jobOfferService = jobOfferService;
             _mapper = mapper;
+            _db = db;
         }
         public async Task<IActionResult> Index()
         {
@@ -92,9 +97,9 @@ namespace JobTastic.Controllers
             {
                 return RedirectToAction("index");
             }
-            return RedirectToAction("ViewCVContent", "Resume", new { id = applierId });
+            return RedirectToAction("ViewCVContent", "Resume", new { UserId = applierId });
         }
-        public RedirectToActionResult Accept(string JobApplyId)
+        public async Task<IActionResult> Accept(string JobApplyId)
         {
             if (JobApplyId == null)
             {
@@ -102,11 +107,14 @@ namespace JobTastic.Controllers
             }
             else
             {
-                var application = _jobApplyService.Accept(JobApplyId);
+                var jobApply=await _jobApplyService.GetById(JobApplyId);
+                jobApply.result = "accepted";
+                jobApply.respond=DateTime.Now;
+                _db.SaveChanges();
                 return RedirectToAction("index");
             }
         }
-        public RedirectToActionResult Refuse(string JobApplyId)
+        public async Task<IActionResult> Refuse(string JobApplyId)
         {
             if (JobApplyId == null)
             {
@@ -114,9 +122,45 @@ namespace JobTastic.Controllers
             }
             else
             {
-                var application = _jobApplyService.Refuse(JobApplyId);
+                var jobApply = await _jobApplyService.GetById(JobApplyId);
+                jobApply.result = "refused";
+                jobApply.respond = DateTime.Now;
+                _db.SaveChanges();
                 return RedirectToAction("index");
             }
         }
+        public IActionResult Delete(string JobApplyId)
+        {
+            /*if (JobApplyId == null)
+            {
+               
+                return RedirectToAction("index");
+            }
+            else {
+                var jobApply = _jobApplyService.Delete(JobApplyId);
+                TempData["Delete"] = "success delete";
+
+                // Redirect to the appropriate view or action
+                return RedirectToAction("Index"); // Change "Index" to the action you want to redirect to
+            }*/
+            var jobApply = _db.JobApplies.Find(JobApplyId);
+
+            if (jobApply == null)
+            {
+                TempData["Delete"] = "error delete application id not founs";
+            }
+            else
+            {
+                
+                _db.JobApplies.Remove(jobApply);
+                _db.SaveChanges();
+                TempData["Delete"] = "success delete";
+            }
+
+            // Redirect to the appropriate view or action
+            return RedirectToAction("Index"); // Change "Index" to the action you want to redirect to
+
+        }
+
     }
 }
