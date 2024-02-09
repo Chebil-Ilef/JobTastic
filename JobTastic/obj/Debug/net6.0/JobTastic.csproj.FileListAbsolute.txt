@@ -2468,8 +2468,6 @@ C:\Users\olfam\OneDrive\Documents\GitHub\JobTastic\JobTastic\obj\Debug\net6.0\Ra
 C:\Users\olfam\OneDrive\Documents\GitHub\JobTastic\JobTastic\obj\Debug\net6.0\Razor\Views\JobType\Edit.cshtml.g.cs
 C:\Users\olfam\OneDrive\Documents\GitHub\JobTastic\JobTastic\obj\Debug\net6.0\Razor\Views\JobType\Index.cshtml.g.cs
 C:\Users\olfam\OneDrive\Documents\GitHub\JobTastic\JobTastic\obj\Debug\net6.0\Razor\Views\ManageAdmin\Index.cshtml.g.cs
-C:\Users\olfam\OneDrive\Documents\GitHub\JobTastic\JobTastic\obj\Debug\net6.0\Razor\Views\ManageUsers\Create.cshtml.g.cs
-C:\Users\olfam\OneDrive\Documents\GitHub\JobTastic\JobTastic\obj\Debug\net6.0\Razor\Views\ManageUsers\Edit.cshtml.g.cs
 C:\Users\olfam\OneDrive\Documents\GitHub\JobTastic\JobTastic\obj\Debug\net6.0\Razor\Views\ManageUsers\Index.cshtml.g.cs
 C:\Users\olfam\OneDrive\Documents\GitHub\JobTastic\JobTastic\obj\Debug\net6.0\Razor\Views\Resume\Index.cshtml.g.cs
 C:\Users\olfam\OneDrive\Documents\GitHub\JobTastic\JobTastic\obj\Debug\net6.0\Razor\Views\Resume\UploadCV.cshtml.g.cs

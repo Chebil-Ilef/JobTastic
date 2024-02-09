@@ -73,8 +73,6 @@
                                 <a asp-action="Create" class="btn btn-success btn-sm">Create</a>
                             }
                         }
-                        <!--<input name="phrase" class="form-control input-sm" placeholder="@ViewData["phrase"]" autofocus />
-                        <input type="submit" value="Search" class="btn btn-default btn-sm" />-->
                     </form>
                 </div>
                 <div class="pt-3">
@@ -103,9 +101,12 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
-                                    <div class="d-flex mb-3">
-                                        <a asp-controller="JobApply" asp-action="Apply" asp-route-id="@item.JobOfferId" class="btn btn-primary">Apply Now</a>
-                                    </div>
+                                        @if (User.IsInRole("JobSearcher"))
+                                        {
+                                            <div class="d-flex mb-3">
+                                                <a asp-controller="JobApply" asp-action="Apply" asp-route-id="@item.JobOfferId" class="btn btn-primary">Apply Now</a>
+                                            </div>
+                                        }
                                         <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>Published on: @Html.DisplayFor(modelItem => item.Submitted)</small>
                                 </div>
                             </div>
