@@ -9,5 +9,7 @@ namespace JobTastic.Repositories.IRepositories
         void Add(JobApply item);
         Task<IEnumerable<JobApply>> GetByJobOfferId(string id);
         Task<IEnumerable<JobApply>> GetApplication(string userId, string JobId);
+        Task<JobApply> GetById(string id);
+        void Update(JobApply item);
     }
 }

@@ -73,6 +73,12 @@
                                                     <h1>response time:</h1>
                                                     <span>@Html.DisplayFor(modelItem => item.respond)</span>
                                                 }
+                                                @if (User.IsInRole("Recruiter"))
+                                                {
+                                                    <a asp-controller="JobApply" asp-action="ViewApplierCv" asp-route-id="@item.ApplierId" class="btn btn-primary btn-sm">Check applier CV</a>
+                                                    <a asp-controller="JobApply" asp-action="Accept" asp-route-id="@item.JobApplyId" class="btn btn-primary btn-sm">Accept</a>
+                                                    <a asp-controller="JobApply" asp-action="Refuse" asp-route-id="@item.JobApplyId" class="btn btn-primary btn-sm">Refuse</a>
+                                                }
                                             </div>
                                         </div>
                                     }

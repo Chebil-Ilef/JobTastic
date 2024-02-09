@@ -4,6 +4,7 @@ using JobTastic.Models;
 using JobTastic.Repositories.IRepositories;
 using JobTastic.Services.IServices;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 namespace JobTastic.Services
 {
@@ -52,6 +53,44 @@ namespace JobTastic.Services
         {
             return await _jobApplyRepo.GetApplication(userId, JobId);
         }
+        public async Task<bool> Accept(String id)
+        {
+            var application = await _jobApplyRepo.GetById(id);
+            application.result = "accepted";
+            application.handled = true;
+            application.respond = DateTime.Now;
 
-}
+            try
+            {
+                _jobApplyRepo.Update(application);
+                await _unitOfWork.Save();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                return false;
+            }
+
+            return true;
+        }
+        public async Task<bool> Refuse(String id)
+        {
+            var application = await _jobApplyRepo.GetById(id);
+            application.result = "refused";
+            application.handled = true;
+            application.respond = DateTime.Now;
+
+            try
+            {
+                _jobApplyRepo.Update(application);
+                await _unitOfWork.Save();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+    }
 }

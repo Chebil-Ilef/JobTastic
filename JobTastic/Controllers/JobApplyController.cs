@@ -86,5 +86,37 @@ namespace JobTastic.Controllers
         {
             return Guid.NewGuid().ToString("N");
         }
+        public RedirectToActionResult ViewApplierCv(string applierId)
+        {
+            if (applierId == null)
+            {
+                return RedirectToAction("index");
+            }
+            return RedirectToAction("ViewCVContent", "Resume", new { id = applierId });
+        }
+        public RedirectToActionResult Accept(string JobApplyId)
+        {
+            if (JobApplyId == null)
+            {
+                return RedirectToAction("index");
+            }
+            else
+            {
+                var application = _jobApplyService.Accept(JobApplyId);
+                return RedirectToAction("index");
+            }
+        }
+        public RedirectToActionResult Refuse(string JobApplyId)
+        {
+            if (JobApplyId == null)
+            {
+                return RedirectToAction("index");
+            }
+            else
+            {
+                var application = _jobApplyService.Refuse(JobApplyId);
+                return RedirectToAction("index");
+            }
+        }
     }
 }
