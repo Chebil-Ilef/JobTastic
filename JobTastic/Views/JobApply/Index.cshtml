@@ -1,4 +1,4 @@
-﻿@using JobTastic.Services.IServices;
+﻿﻿@using JobTastic.Services.IServices;
 @model IEnumerable<JobTastic.Models.JobApply>
 @inject IAuthService AuthService
 
@@ -52,12 +52,19 @@
                                             @TempData["Message"]
                                         </div>
                                     }
+                                    @if (TempData["Delete"] != null)
+                                    {
+                                        <div class="alert alert-success">
+                                            @TempData["Delete"]
+                                        </div>
+                                    }
+
                                     @foreach (var item in Model)
                                     {
                                         <div class="single-job-items mb-30">
                                             <div class="job-items">
                                                 <div class="job-tittle job-tittle2">
-                                                    <a asp-controller= "JobOffer" asp-action="Details" asp-route-id="@item.JobOffer.jobOfferId">
+                                                    <a asp-controller="JobOffer" asp-action="Details" asp-route-id="@item.JobOffer.jobOfferId">
                                                         <h4>@Html.DisplayFor(modelItem => item.JobOffer.Title)</h4>
                                                     </a>
                                                     <ul>
@@ -68,16 +75,23 @@
                                             <div class="items-link items-link2 f-right">
                                                 <h1>sending time:</h1>
                                                 <span>@Html.DisplayFor(modelItem => item.sent)</span>
-                                                @if (item.respond!=null)
+                                                @if (item.respond != null)
                                                 {
                                                     <h1>response time:</h1>
                                                     <span>@Html.DisplayFor(modelItem => item.respond)</span>
                                                 }
+                                                @if (User.IsInRole("JobSearcher"))
+                                                {
+                                                    <a asp-controller="JobApply" asp-action="Delete" asp-route-JobApplyId="@item.JobApplyId" class="btn btn-primary btn-sm">Delete</a>
+                                                }
                                                 @if (User.IsInRole("Recruiter"))
                                                 {
-                                                    <a asp-controller="JobApply" asp-action="ViewApplierCv" asp-route-id="@item.ApplierId" class="btn btn-primary btn-sm">Check applier CV</a>
-                                                    <a asp-controller="JobApply" asp-action="Accept" asp-route-id="@item.JobApplyId" class="btn btn-primary btn-sm">Accept</a>
-                                                    <a asp-controller="JobApply" asp-action="Refuse" asp-route-id="@item.JobApplyId" class="btn btn-primary btn-sm">Refuse</a>
+                                                    <a asp-controller="JobApply" asp-action="ViewApplierCv" asp-route-applierId="@item.ApplierId" class="btn btn-primary btn-sm">Check applier CV</a>
+                                                    @if (item.respond == null)
+                                                    {
+                                                        <a asp-controller="JobApply" asp-action="Accept" asp-route-JobApplyId="@item.JobApplyId" class="btn btn-primary btn-sm">Accept</a>
+                                                        <a asp-controller="JobApply" asp-action="Refuse" asp-route-JobApplyId="@item.JobApplyId" class="btn btn-primary btn-sm">Refuse</a>
+                                                    }
                                                 }
                                             </div>
                                         </div>

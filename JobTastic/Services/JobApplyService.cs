@@ -34,13 +34,14 @@ namespace JobTastic.Services
             return await _jobApplyRepo.GetByApplier(id);
         }
 
-        public async Task<IEnumerable<JobApply>> GetAllByRecruiter(string id) {
+        public async Task<IEnumerable<JobApply>> GetAllByRecruiter(string id)
+        {
             return await _jobApplyRepo.GetByRecruiter(id);
         }
         public async Task<bool> Add(JobApply item)
         {
             item.sent = DateTime.Now;
-            
+
             _jobApplyRepo.Add(item);
             await _unitOfWork.Save();
             return true;
@@ -49,47 +50,21 @@ namespace JobTastic.Services
         {
             return await _jobApplyRepo.GetByJobOfferId(id);
         }
-        public async Task<IEnumerable<JobApply>> GetApplication(string userId,string JobId)
+        public async Task<IEnumerable<JobApply>> GetApplication(string userId, string JobId)
         {
             return await _jobApplyRepo.GetApplication(userId, JobId);
         }
-        public async Task<bool> Accept(String id)
+
+        public async Task<JobApply> GetById(String id)
         {
-            var application = await _jobApplyRepo.GetById(id);
-            application.result = "accepted";
-            application.handled = true;
-            application.respond = DateTime.Now;
-
-            try
-            {
-                _jobApplyRepo.Update(application);
-                await _unitOfWork.Save();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                return false;
-            }
-
-            return true;
+            return await _jobApplyRepo.GetById(id);
         }
-        public async Task<bool> Refuse(String id)
+        public async Task Delete(String id)
         {
-            var application = await _jobApplyRepo.GetById(id);
-            application.result = "refused";
-            application.handled = true;
-            application.respond = DateTime.Now;
 
-            try
-            {
-                _jobApplyRepo.Update(application);
-                await _unitOfWork.Save();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                return false;
-            }
-
-            return true;
+            var jobDelete = await _jobApplyRepo.GetById(id);
+            _jobApplyRepo.Delete(jobDelete);
+            await _unitOfWork.Save();
         }
 
     }
